@@ -1,1 +1,22 @@
-@import "Navbar";
+
+// // 1. Components
+// @import 'Navbar',
+//         'HeroVideo',
+//         'HeroOverlay',
+//         'RecentNews',
+//         'About';
+
+@import
+  '../../sass/abstracts/variables',
+  '../../sass/abstracts/functions',
+  '../../sass/abstracts/mixins';
+
+
+  // 3. Base stuff
+@import
+'../../sass/base/base',
+'../../sass/base/fonts',
+'../../sass/base/typography',
+'../../sass/base/helpers';
+
+  

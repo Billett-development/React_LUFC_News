@@ -1,0 +1,18 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+
+  color: $black-text;
+  //font: normal 125% / 1.4 $text-font-stack;
+  background-color: $background-colour;
+}
+
+
+.section-headings {
+
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 6rem;
+}

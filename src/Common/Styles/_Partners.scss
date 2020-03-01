@@ -1,0 +1,54 @@
+@import './main';
+
+.partners {
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include respond(tab-port) {
+        height: 15vh;
+    }
+
+    @include respond(phone) {
+        height: 10vh;
+     }
+
+    &__1 {
+
+        background-image: url(../../Images/Common/prae-tac.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 22.5%;
+        height: 25vh;
+
+    }
+
+    &__2 {
+        
+        width: 22.5%;
+        height: 25vh;
+        background-image: url(../../Images/Common/veterans-raffle.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &__3 {
+
+        width: 22.5%;
+        height: 25vh;
+        background-image: url(../../Images/Common/lufc-logo-1.PNG);
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+    }
+
+    &__4 {
+
+        width: 22.5%;
+        height: 25vh;
+        background-image: url(../../Images/Common/FNUK-logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}

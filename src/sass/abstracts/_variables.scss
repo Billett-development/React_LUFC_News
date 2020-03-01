@@ -1,0 +1,114 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+
+//////////////////////////////////////////////////////////
+/////// COLOURS
+// Primary colour (LUFC Blue)
+$primary-blue: #02427C;
+
+//secondary-blue (LUFC ‘Dark’ Blue)
+$secondary-blue: #02427C;
+
+//secondary-colour (LUFC Yellow)
+$primary-yellow: #F2CC61;
+
+//background-colour (‘Off’ White)
+$background-colour: #F7F7F7;
+
+//black-text (‘Off’ Black)
+$black-text: #02335E;
+
+$color-white: #fff;
+
+$color-black: #000;
+
+
+
+//form-focus colours
+
+$green : #238823;
+
+$red : #D2222D;
+
+
+
+
+//////////////////////////////////////////////////////////
+/////// PADDING
+
+$small-padding: 0.3125rem;
+
+$medium-padding: 0.625rem;
+
+$large-padding: 0.9375rem;
+
+
+//////////////////////////////////////////////////////////
+/////// FONTS
+
+$hero-text: 10rem;
+
+$section-heading: 2.5rem;
+
+$menu-item: 1.25rem;
+
+$primary-text: 0.9375rem;
+
+//////////////////////////////////////////////////////////
+//// SECTION MARGINS
+
+$section-margin: 8rem;
+
+//////////////////////////////////////////////////////////
+/// BORDERS
+
+$border-1px : 1px solid $primary-blue;
+
+$border-2px: 2px solid $primary-blue;
+
+$form-border: 1px solid $primary-blue;
+
+//////////////////////////////////////////////////////////
+/////BORDER-RADIUS
+
+$border-radius: 4px;
+
+
+
+//////////////////////////////////////////////////////////
+/// ANIMATIONS
+
+$animation: all .4s;
+
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1250px !default;
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 
+
 import { Grid, Segment } from "semantic-ui-react";
+
+import '../Styles/_Home.scss';
 
 export default function HomePosts() {
   // useState() is a hook used to store local state data
@@ -52,12 +55,12 @@ export default function HomePosts() {
 
   // This is our return function where we render everything
   return (
-    <Segment className={"homepage-posts"}>
+    <Segment className={"news__articles"}>
       <Grid
         container
         columns={2}
         stackable
-        className={"homepage-posts-container"}
+        className={"news__aritcles-1"}
       >
         {posts}
       </Grid>

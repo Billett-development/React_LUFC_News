@@ -2,20 +2,25 @@ import React from "react";
 import { Grid } from "semantic-ui-react";
 import Logo from "../../Images/Common/header-logo.png";
 
-const DEFAULT_CLASSNAME = "navbar";
+
+import '../Styles/_Navbar.scss';
+
+const DEFAULT_CLASSNAME = "navigation";
 
 export default function Navbar() {
   return (
     <Grid columns={7} className={DEFAULT_CLASSNAME}>
-      <Grid.Column>NEWS</Grid.Column>
-      <Grid.Column>ABOUT</Grid.Column>
-      <Grid.Column>LUFC ZONE</Grid.Column>
-      <Grid.Column>
-        <img src={Logo} className={`${DEFAULT_CLASSNAME}__logo`} />
-      </Grid.Column>
-      <Grid.Column>LUFC LIVE</Grid.Column>
-      <Grid.Column>MERCH</Grid.Column>
-      <Grid.Column>CONTACT</Grid.Column>
+      <div className={`${DEFAULT_CLASSNAME}__list`}>
+        <Grid.Column className={`${DEFAULT_CLASSNAME}__item`}>NEWS</Grid.Column>
+        <Grid.Column className={`${DEFAULT_CLASSNAME}__item`}>ABOUT</Grid.Column>
+        <Grid.Column className={`${DEFAULT_CLASSNAME}__item`}>LUFC ZONE</Grid.Column>
+        <Grid.Column >
+          <img alt="LUFC logo" src={Logo} className={`${DEFAULT_CLASSNAME}__item-logo`} />
+        </Grid.Column>
+        <Grid.Column className={`${DEFAULT_CLASSNAME}__item`}>LUFC LIVE</Grid.Column>
+        <Grid.Column className={`${DEFAULT_CLASSNAME}__item`}>MERCH</Grid.Column>
+        <Grid.Column className={`${DEFAULT_CLASSNAME}__item`}>CONTACT</Grid.Column>
+      </div>
     </Grid>
   );
 }

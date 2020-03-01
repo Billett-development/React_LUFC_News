@@ -1,0 +1,42 @@
+@import '../../Common/Styles/main';
+
+.section-hero {
+    position: relative;
+    margin-bottom: $section-margin;
+}
+
+.section-news {
+
+    margin-top: $section-margin;
+    margin-bottom: $section-margin;
+}
+
+.section-about {
+
+    margin-top: $section-margin;
+    margin-bottom: $section-margin;
+}
+
+.section-highlights {
+
+    margin-top: $section-margin;
+    margin-bottom: $section-margin;
+}
+.section-products {
+
+    margin-top: $section-margin;
+    margin-bottom: $section-margin;
+}
+
+.section-partners {
+
+    margin-top: $section-margin;
+    margin-bottom: $section-margin;
+}
+
+.section-footer {
+
+    background-color: $primary-blue;
+    color: $color-white;
+    padding-top: 3rem;
+}

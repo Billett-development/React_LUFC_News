@@ -1,0 +1,234 @@
+@import './main';
+.news__articles {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 5rem;
+
+    position: relative;
+
+    @include respond(tab-land) {
+
+        grid-row-gap: 2rem;
+
+    }
+
+    @include respond(phone) {
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        justify-items: center;
+
+    }
+
+
+    &-1 {
+
+        grid-area: 1 / 1 / 2 / 2;
+        height: 40vh;
+        width: 90%;
+        margin-right: 10%;
+        
+        background-image: url("../../Images/Common/leeds-players.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include respond(tab-land){
+
+            width: 95%;
+            margin-right: 5%;
+            
+        }
+
+        @include respond(phone) {
+            grid-area: 1 / 1 / 2 / 2;
+            margin-right: 0;
+        }
+            
+            &-overlay { @include imageOverlay; }
+    
+            &:hover &-overlay{ opacity: .8; }
+    
+            &-text {
+    
+                @include absCenter;
+                color: $color-white;
+    
+                h3 {
+                    font-size: 3rem;
+                }
+    
+                p {
+                    font-size: 2rem;
+                    text-align: center;
+                }
+            }
+    }
+
+    &-2 {
+
+        grid-area: 1 / 2 / 2 / 3;
+        height: 40vh;
+        width: 90%;
+        margin-left: 10%;
+        background-image: url("../../Images/Common/leeds-players.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include respond(tab-land){
+
+            width: 95%;
+            margin-left: 5%; 
+        }
+
+        @include respond(phone) {
+
+            grid-area: 2 / 1 / 2 / 2;
+            margin-left: 0;
+
+        }
+        &-overlay { @include imageOverlay; }
+
+        &:hover &-overlay{ opacity: .8; }
+
+        &-text {
+
+            @include absCenter;
+            color: $color-white;
+
+            h3 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+    }
+
+    &-3 {
+
+        grid-area: 2 / 1 / 3 / 2;
+        margin-right: 5rem;
+        height: 40vh;
+        width: 90%;
+        margin-right: 10%;
+        background-image: url("../../Images/Common/leeds-players.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include respond(tab-land){
+
+            width: 95%;
+            margin-right: 5%;
+            
+        }
+
+        @include respond(phone) {
+
+            grid-area: 3 / 1 / 3 / 2;
+            margin-right: 0;
+        }
+
+        &-overlay { @include imageOverlay; }
+
+        &:hover &-overlay{ opacity: .8; }
+
+        &-text {
+
+            @include absCenter;
+            color: $color-white;
+
+            h3 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+    }
+
+    &-4 {
+
+        grid-area: 2 / 2 / 3 / 3;
+        height: 40vh;
+        width: 90%;
+        margin-left: 10%;
+        background-image: url("../../Images/Common/leeds-players.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include respond(tab-land){
+
+            width: 95%;
+            margin-left: 5%; 
+        }
+
+        @include respond(phone) {
+
+            grid-area: 4 / 1 / 4 / 2;
+            margin-left: 0;
+        }
+
+        &-overlay { @include imageOverlay; }
+
+        &:hover &-overlay{ opacity: .8; }
+
+        &-text {
+
+            @include absCenter;
+            color: $color-white;
+
+            h3 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+    }
+
+
+    &-btn {
+
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+        
+    }
+
+
+}
+
+
+.btn-inverse {
+
+    @include btnStyles;
+
+    background-color: $color-white;
+    color: $primary-blue;
+    border: $border-1px;
+
+    &:hover {
+
+        letter-spacing: 1px;
+        text-decoration: none;
+
+        box-shadow: 3px 5px 5px rgba(105, 105, 105, 0.315);
+        background-color: $primary-blue;
+        color: $color-white;
+
+    }
+}

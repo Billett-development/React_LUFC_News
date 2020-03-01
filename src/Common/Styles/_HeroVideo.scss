@@ -1,0 +1,26 @@
+
+@import './main';
+
+.bg-video {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 90vh;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    margin-top: 10vh;
+
+    @include respond(phone){
+        height: 100vh;
+        margin-top: 0;
+    
+     }
+
+        &__content {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+}
