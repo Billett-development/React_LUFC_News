@@ -8,7 +8,7 @@ const DEFAULT_CLASSNAME = "hero";
 
 export default function HeroOverlay() {
     return(
-        <div className="section-partners">
+    <div className="section-partners">
         <div className="container">
         <div className="partners__heading">
             <h3 className="section-headings">our partners</h3>

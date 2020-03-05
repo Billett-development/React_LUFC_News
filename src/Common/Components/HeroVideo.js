@@ -12,6 +12,7 @@ export default function HeroVideo() {
         <Segment className={DEFAULT_CLASSNAME}>
             <video loop autoPlay className={`${DEFAULT_CLASSNAME}__content`}>
                 <source src={fanVideo} type="video/mp4"/>
+                
             </video>
         </Segment>
     );

@@ -12,7 +12,7 @@ import Partners from "../../Common/Components/Partners";
 import Footer from "../../Common/Components/Footer";
 import { Segment } from "semantic-ui-react";
 
-export default function DataLoader() {
+export default function Home() {
   return (
     <Segment>
       <Navbar />
