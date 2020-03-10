@@ -20,6 +20,25 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "rules": {
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          "components": [
+            "Link"
+          ],
+          "specialLink": [
+            "hrefLeft",
+            "hrefRight"
+          ],
+          "aspects": [
+            "noHref",
+            "invalidHref",
+            "preferButton"
+          ]
+        }
+      ]
+    },
     "extends": "react-app"
   },
   "browserslist": {

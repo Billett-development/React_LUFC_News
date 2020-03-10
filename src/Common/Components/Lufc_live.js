@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../Styles/_Lufclive.scss';
 
-export default function Lufc_Live(){
+export default function Lufclive(){
     return(
         <div class="section-live">  
         <div class="live">
