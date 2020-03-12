@@ -4,10 +4,6 @@ import './index.scss';
 import App from './Home/Components/Home';
 import * as serviceWorker from './serviceWorker';
 
-import Home from './Home/Components/Home';
-import About from './Home/Components/About';
-import Contact from './Home/Components/Contact';
-import Lufc_Live from './Home/Components/Lufc_live';
 
 ReactDOM.render(
     <App />, 

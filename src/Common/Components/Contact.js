@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
 
+import SimpleMap from './Maps';
 
 import '../Styles/_Contact.scss';
 
 const DEFAULT_CLASSNAME = "hero";
 
 export default function Contact() {
+
     return(
         <div className="section-contact">
                 <div className="contact">
@@ -81,8 +83,9 @@ export default function Contact() {
                         </div>
                     </form>
                 </div>
-                    <div class="contact__map" id="map">
 
+                    <div class="contact__map" id="map">
+                        <SimpleMap />
                     </div>
                 </div>
             

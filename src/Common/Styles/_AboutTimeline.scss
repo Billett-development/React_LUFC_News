@@ -1,0 +1,159 @@
+@import './main';
+
+.timeline {
+
+    margin-top: 10vh;
+    padding-top: 5vh;
+    position: relative;
+    color: $primary-blue;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: $primary-blue;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+    }
+
+
+
+    &__container {
+
+        //padding: 10px 40px 10px 0px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+        border-radius: 1rem;
+
+
+        &::after { // timeline circles
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12.4px;
+            background-color: white;
+            border: 4px solid $primary-yellow;
+            top: 18px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+    }
+    
+    &__content {
+
+        position: relative;
+        border-radius: 1rem;
+        background-color: $color-white;
+        border: $border-1px;
+        display: flex;
+        flex-direction: column;
+
+        &-head {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $primary-blue;
+            height: 7vh;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            border-bottom: $border-1px;
+            
+            h5 {
+                font-size: 2.3rem;
+                text-transform: uppercase;
+                padding: 2rem;
+                color: $color-white;
+            }
+
+            span {
+
+                
+                padding: 1.8rem;
+                font-size: 2rem;
+                color: $color-white;
+
+            }
+            
+            & span:nth-child(2) {
+                border-left: 1px solid $primary-yellow;
+            }
+
+            & span:nth-child(1) {
+                border-right: 1px solid $primary-yellow;
+            }
+
+        }
+
+        &-info {
+
+            padding: 1rem;
+            font-size: 1.7rem;
+            border-bottom: $border-1px;
+        }
+        &-img {
+            
+            display: flex;
+            justify-content: center;
+            margin: auto;
+
+            img {
+                padding: 2rem;
+                width: 100%;
+                height: auto;
+                border-radius: 1rem;
+            }
+        }
+    }
+
+    &__left {
+        left: 0;
+        padding: 10px 40px 10px 0px;
+        &::before { // before element for the container arrow
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 18px;
+            width: 0;
+            z-index: 1;
+            right: 26px;
+            border: medium solid $primary-blue;
+            border-width: 13px 0 13px 13px;
+            border-color: transparent transparent transparent $primary-blue;
+        }
+
+    }
+
+    &__right {
+        left: 50%;
+        padding: 10px 0px 10px 40px;
+        &::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 18px;
+            width: 0;
+            z-index: 1;
+            left: 26px;
+            border: medium solid  $primary-blue;
+            border-width: 13px 13px 13px 0;
+            border-color: transparent  $primary-blue transparent transparent;
+        }
+
+        &::after { // make sure the circle is on the timeline
+
+            left: -13px;
+        }
+
+    }
+
+
+
+
+}
+
