@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+
+.btn-blue {
+
+    @include btnStyles;
+
+    background-color: $primary-blue;
+    color: $color-white;
+    width: 20vw;
+
+    &:hover {
+
+        letter-spacing: 1px;
+        text-decoration: none;
+
+        box-shadow: 3px 5px 5px rgba(105, 105, 105, 0.315);
+        color: $primary-blue;
+        background-color: $color-white;
+       
+    }
+
+}
+
+
+.btn-inverse {
+
+    @include btnStyles;
+
+    background-color: $color-white;
+    color: $primary-blue;
+    border: $border-1px;
+
+   
+
+    &:hover {
+
+        letter-spacing: 1px;
+        text-decoration: none;
+
+        box-shadow: 3px 5px 5px rgba(105, 105, 105, 0.315);
+        background-color: $primary-blue;
+        color: $color-white;
+
+    }
+}

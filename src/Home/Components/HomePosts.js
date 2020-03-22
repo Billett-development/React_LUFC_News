@@ -13,8 +13,10 @@ export default function HomePosts() {
   // useEffect() is a function that handles actions when something affects your component
   // So we want to fetch our API when certain things affect our component
   useEffect(() => {
+
     // Here we define the function getData which fetches our API data
     function getData() {
+      
       // Select API endpoint
       fetch("http://www.lufcnews.co.uk/wp-json/wp/v2/posts?_embed")
         // Turn the data into something we can use I.E. JSON

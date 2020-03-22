@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import { Grid } from "semantic-ui-react";
 
 import '../Styles/_RecentNews.scss';
@@ -7,11 +8,30 @@ const DEFAULT_CLASSNAME = "news";
 
 
 export default function RecentNews() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+
+    function getData() {
+
+      fetch("http://localhost/LUFC_news/wp-json/acf/v3/posts/32?_embed")
+            .then(response => response.json())
+            .then(data => setData(data));
+
+         console.log(data);
+    }
+        getData();
+
+
+  }, []);
+
+
   return (
     <div className="section-news">
     <div className="container">
         <div className="news__heading">
-            <h3 className="section-headings">recent news</h3>
+                <h3 className="section-headings">hello</h3>
         </div>
 
         <div className="news__articles">
@@ -23,6 +43,7 @@ export default function RecentNews() {
                 </div>
             </div>
         </div>
+
         <div className="news__articles-2">
             <div className="news__articles-2-overlay">
                 <div className="news__articles-2-text">
@@ -31,6 +52,7 @@ export default function RecentNews() {
                 </div>
             </div>
         </div>
+
         <div className="news__articles-3">
             <div className="news__articles-3-overlay">
                 <div className="news__articles-3-text">
@@ -55,5 +77,7 @@ export default function RecentNews() {
 
 </div>
 </div>
+
+
   );
 }

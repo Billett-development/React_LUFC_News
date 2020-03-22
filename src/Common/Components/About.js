@@ -14,10 +14,8 @@ export default function About() {
         <div className="about">
                 <div className="about__info">
                     <h3>about lufc news</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, 
-                        nemo! Similique provident ex corporis eligendi omnis blanditiis. 
-                        Molestiae id praesentium incidunt provident nesciunt fugiat animi, 
-                        distinctio quo magni! Odit, deserunt.</p>
+                    <p>Lufcnews was founded in May 2017 by Alex Matthews, the sole owner & developer of the Lufcnews brand. Join the Lufcnews community today and 
+                    keep updated with all the latest on Leeds United, including Live scores, polls, highlights, match reports and anything Leeds United related.</p>
                     
                 </div>
                 <div className="about__images">
