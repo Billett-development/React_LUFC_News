@@ -6,23 +6,24 @@ import '../Styles/_RecentNews.scss';
 const DEFAULT_CLASSNAME = "news";
 
 
-export default function RecentNews() {
+export default function RecentNews(RecentObject) {
 
-    
- 
+    const RecentNewsResult = RecentObject.RecentNews;
+
   return (
+
     <div className="section-news">
     <div className="container">
         <div className="news__heading">
-                <h3 className="section-headings">hello</h3>
+                <h3 className="section-headings">{RecentNewsResult !== undefined ? RecentNewsResult.recent_news_title : ""}</h3>
         </div>
 
         <div className="news__articles">
         <div className="news__articles-1">
             <div className="news__articles-1-overlay">
                 <div className="news__articles-1-text">
-                    <h3>PLACEHOLDER</h3>
-                    <p>Place holder text info</p>
+                    <h3>{RecentNewsResult !== undefined ? RecentNewsResult.top_left_description : ""}</h3>
+                    <p>{RecentNewsResult !== undefined ? RecentNewsResult.top_left_sub_description : ""}</p>
                 </div>
             </div>
         </div>
@@ -30,8 +31,8 @@ export default function RecentNews() {
         <div className="news__articles-2">
             <div className="news__articles-2-overlay">
                 <div className="news__articles-2-text">
-                    <h3>PLACEHOLDER</h3>
-                    <p>Place holder text info</p>
+                <h3>{RecentNewsResult !== undefined ? RecentNewsResult.top_right_description : ""}</h3>
+                <p>{RecentNewsResult !== undefined ? RecentNewsResult.top_right_sub_description : ""}</p>
                 </div>
             </div>
         </div>
@@ -39,23 +40,23 @@ export default function RecentNews() {
         <div className="news__articles-3">
             <div className="news__articles-3-overlay">
                 <div className="news__articles-3-text">
-                    <h3>PLACEHOLDER</h3>
-                    <p>Place holder text info</p>
+                <h3>{RecentNewsResult !== undefined ? RecentNewsResult.bottom_left_description : ""}</h3>
+                <p>{RecentNewsResult !== undefined ? RecentNewsResult.bottom_left_sub_description : ""}</p>
                 </div>
             </div>
         </div>
         <div className="news__articles-4">
             <div className="news__articles-4-overlay">
                 <div className="news__articles-4-text">
-                    <h3>PLACEHOLDER</h3>
-                    <p>Place holder text info</p>
+                <h3>{RecentNewsResult !== undefined ? RecentNewsResult.bottom_right_description : ""}</h3>
+                <p>{RecentNewsResult !== undefined ? RecentNewsResult.bottom_right_sub_description : ""}</p>
                 </div>
             </div>
         </div>
     </div>
 
     <div className="news__articles-btn">
-        <a href="index.js" className="btn-inverse">click to see more news</a>
+        <a href="index.js" className="btn-inverse">{RecentNewsResult !== undefined ? RecentNewsResult.recent_news_button : ""}</a>
     </div>
 
 </div>

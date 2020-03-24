@@ -16,11 +16,15 @@
 
     &__1 {
 
-        background-image: url(../../Images/Common/prae-tac.png);
-        background-size: contain;
-        background-repeat: no-repeat;
         width: 22.5%;
         height: 25vh;
+
+            img {
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100%;
+            }
+
 
     }
 
@@ -28,27 +32,35 @@
         
         width: 22.5%;
         height: 25vh;
-        background-image: url(../../Images/Common/veterans-raffle.png);
-        background-size: contain;
-        background-repeat: no-repeat;
+
+            img {
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100%;
+            }
     }
 
     &__3 {
 
         width: 22.5%;
         height: 25vh;
-        background-image: url(../../Images/Common/lufc-logo-1.PNG);
-        background-size: contain;
-        background-repeat: no-repeat;
-        
+
+            img {
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100%;
+            }
     }
 
     &__4 {
 
         width: 22.5%;
         height: 25vh;
-        background-image: url(../../Images/Common/FNUK-logo.png);
-        background-size: contain;
-        background-repeat: no-repeat;
+
+            img {
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100%;
+            }
     }
 }

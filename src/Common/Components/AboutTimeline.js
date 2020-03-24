@@ -25,7 +25,7 @@ export default function AboutTimeline(info) {
                 <div className="timeline__container timeline__left">
                         <div className="timeline__content" data-aos="fade-left">
                             <div className="timeline__content-head">
-                                <h5>{info.acf !== undefined ? info.acf.recent_news_title : ""}</h5>
+                                <h5>{info.info !== undefined ? info.info.recent_news_title : ""}</h5>
                                 <span>May 2017</span>
                             </div>
                             <div className="timeline__content-info">

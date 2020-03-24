@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import Navbar from "../../Common/Components/Navbar";
 import HeroVideo from "../../Common/Components/HeroVideo";
 import HeroOverlay from "../../Common/Components/HeroOverlay";
 import RecentNews from "../../Common/Components/RecentNews";
@@ -12,42 +10,43 @@ import Products from "../../Common/Components/Products";
 import Partners from "../../Common/Components/Partners";
 import Footer from "../../Common/Components/Footer";
 
-
-import AboutPage from './About';
-import ContactPage from './Contact';
-import lufcLive from './Lufc_live';
-
 import { Segment } from "semantic-ui-react";
 
-export default function Routing() {
+export default function Home() {
 
-  return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/lufcLive" component={lufcLive} />
-          <Route path="/contact"  component={ContactPage}/>
-        </Switch>
-      </div>
-    </Router>
+    const [data, setData] = useState([]);
+
+    const dataIsLoaded = data.acf !== undefined ? true : false;
+  
+  
+    useEffect(() => {
+  
+      function getData() {
+  
+        fetch("http://localhost/LUFC_news/wp-json/acf/v3/pages/24?_embed")
+              .then(response => response.json())
+              .then(data => setData(data));
+  
+           console.log(data.acf);
+      }
+          getData();
+  
+    }, [dataIsLoaded]);
     
-  );
+    return (
+        <Segment>
+        <HeroVideo />
+        <HeroOverlay />
+        <RecentNews RecentNews={data.acf} />
+        <About AboutInfo={data.acf} />
+        <Highlights />
+        <Products Products={data.acf}/>
+        <Partners Partners={data.acf}/>
+        <Footer />
+        </Segment>
+    )
+
+
+
+
 }
-
-const Home = () => (
-
-  <Segment>
-  <HeroVideo />
-  <HeroOverlay />
-  <RecentNews />
-  <About />
-  <Highlights />
-  <Products />
-  <Partners />
-  <Footer />
-  </Segment>
-
-);

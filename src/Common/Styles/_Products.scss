@@ -30,9 +30,12 @@
             flex: 0 0 25%;
             border-radius: $border-radius;
             position: relative;
+
+
             background-image: url(../../Images/Common/alex-img.jpg);
             background-size: cover;
             background-position: center;
+            
             &:before { @include productsBefore; }
 
             span { @include productsSpan; }
@@ -58,14 +61,10 @@
                     font-weight: 600;
                     font-size: 6rem;
                 }
-                
                 .info {
-                    
                     font-size: 3rem;
                 }
-                 
              }
-
         }
 
         &-2 {
