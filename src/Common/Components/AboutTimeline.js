@@ -9,7 +9,14 @@ import Stats from "../../Images/Common/lufc-stats.jpg";
 import '../Styles/_AboutTimeline.scss';
 
 
-export default function AboutTimeline() {
+export default function AboutTimeline(info) {
+
+    console.log(info);
+
+    let fuck = info.info;
+
+    console.log(fuck);
+
     return(
     <div className="section-timeline">
         <div className="container">
@@ -18,7 +25,7 @@ export default function AboutTimeline() {
                 <div className="timeline__container timeline__left">
                         <div className="timeline__content" data-aos="fade-left">
                             <div className="timeline__content-head">
-                                <h5>LUFC founded</h5>
+                                <h5>{info.acf !== undefined ? info.acf.recent_news_title : ""}</h5>
                                 <span>May 2017</span>
                             </div>
                             <div className="timeline__content-info">

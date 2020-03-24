@@ -1,10 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
-
-
-
 
 import Navbar from "../../Common/Components/Navbar";
 import HeroVideo from "../../Common/Components/HeroVideo";
@@ -17,22 +13,23 @@ import Partners from "../../Common/Components/Partners";
 import Footer from "../../Common/Components/Footer";
 
 
-import aboutPage from './About';
-import contactPage from './Contact';
+import AboutPage from './About';
+import ContactPage from './Contact';
 import lufcLive from './Lufc_live';
 
 import { Segment } from "semantic-ui-react";
 
 export default function Routing() {
+
   return (
     <Router>
       <div className="App">
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/about" component={aboutPage} />
+          <Route path="/about" component={AboutPage} />
           <Route path="/lufcLive" component={lufcLive} />
-          <Route path="/contact"  component={contactPage}/>
+          <Route path="/contact"  component={ContactPage}/>
         </Switch>
       </div>
     </Router>
@@ -51,6 +48,6 @@ const Home = () => (
   <Products />
   <Partners />
   <Footer />
-</Segment>
+  </Segment>
 
 );

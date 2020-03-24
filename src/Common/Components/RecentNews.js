@@ -1,6 +1,5 @@
 
-import React, { useState, useEffect } from "react";
-import { Grid } from "semantic-ui-react";
+import React from "react";
 
 import '../Styles/_RecentNews.scss';
 
@@ -9,24 +8,8 @@ const DEFAULT_CLASSNAME = "news";
 
 export default function RecentNews() {
 
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-
-    function getData() {
-
-      fetch("http://localhost/LUFC_news/wp-json/acf/v3/posts/32?_embed")
-            .then(response => response.json())
-            .then(data => setData(data));
-
-         console.log(data);
-    }
-        getData();
-
-
-  }, []);
-
-
+    
+ 
   return (
     <div className="section-news">
     <div className="container">

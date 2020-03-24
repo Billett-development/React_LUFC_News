@@ -6,7 +6,9 @@ import Footer from "../../Common/Components/Footer";
 
 import { Segment } from "semantic-ui-react";
 
-export default function contactPage() {
+export default function ContactPage() {
+
+
     return(
         <Segment>
             <Navbar />
