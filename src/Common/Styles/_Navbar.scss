@@ -76,10 +76,7 @@
       @include respond(phone){
 
           visibility: visible;
-      
        }
-
-
        
       &-checkbox {
           display: none;
@@ -126,7 +123,7 @@
           
            }
 
-          transform: scale(80);
+          //transform: scale(80);
       }
 
 
@@ -216,6 +213,7 @@
 
           transform: scale(80);
           
+          
       }
 
       &-checkbox:checked ~ &-icon {
@@ -295,6 +293,7 @@
 
   }
 
+  //remove normal nav bar
   @include respond(phone){
       visibility: hidden;
   
@@ -315,7 +314,6 @@
 
   &-logo {
 
-      width: 6vw;
       height: 6vh;
       transition: all 1s ease;
 

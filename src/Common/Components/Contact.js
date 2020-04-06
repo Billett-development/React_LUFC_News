@@ -1,43 +1,46 @@
 import React from 'react';
+import { IoIosCall } from "react-icons/io";
+import { IoIosPin } from "react-icons/io";
+import { IoMdMail } from "react-icons/io";
 
 import SimpleMap from './Maps';
 
 import '../Styles/_Contact.scss';
 
-const DEFAULT_CLASSNAME = "hero";
+const DEFAULT_CLASSNAME = "contact";
 
 export default function Contact() {
 
     return(
         <div className="section-contact">
-                <div className="contact">
+                <div className={DEFAULT_CLASSNAME}>
                     <div className="container">
-                    <div className="contact__details">
-                        <div className="contact__details-phone">
-                            
+                    <div className={`${DEFAULT_CLASSNAME}__details`}>
+                        <div className={`${DEFAULT_CLASSNAME}__details-phone`}>
+                            <IoIosCall className="ion-icon" />
                             <h5>Phone</h5>
                             <p>+44 7712294836</p>
                         </div>
-                        <div className="contact__details-post">
-                            
+                        <div className={`${DEFAULT_CLASSNAME}__details-post`}>
+                            <IoIosPin className="ion-icon" />
                             <h5>Post</h5>
                             <p>30 Jubille Road</p> <br />
                             <p>Bath, BA2 8FB</p> <br />
                         </div>
-                        <div className="contact__details-email">
-                            
+                        <div className={`${DEFAULT_CLASSNAME}__details-email`}>
+                            <IoMdMail className="ion-icon" />
                             <h5>Email</h5>
                             <p>kaylembillett@hotmail.co.uk</p>
                         </div>
                     </div>
 
 
-                    <div className="contact__heading">
+                    <div className={`${DEFAULT_CLASSNAME}__heading`}>
                         <h3>Leave us a message</h3>
                         <p>Use the form below to send us an email</p>
                     </div>
 
-                    <form action="#" className="contact__form">
+                    <form action="#" className={`${DEFAULT_CLASSNAME}__form`}>
 
                         <div className="contact__name">
                             <div className="contact__name-label">
@@ -84,7 +87,7 @@ export default function Contact() {
                     </form>
                 </div>
 
-                    <div class="contact__map" id="map">
+                    <div className={`${DEFAULT_CLASSNAME}__map`} id="map">
                         <SimpleMap />
                     </div>
                 </div>

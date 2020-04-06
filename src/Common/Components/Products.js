@@ -1,10 +1,7 @@
 import React from "react";
-import Logo from "../../Images/Common/lufc-logo-lg.png";
-
-
 import '../Styles/_Products.scss';
 
-const DEFAULT_CLASSNAME = "hero";
+const DEFAULT_CLASSNAME = "products";
 
 export default function Products(ProductsObject) {
 
@@ -14,20 +11,20 @@ export default function Products(ProductsObject) {
     return(
         <div className="section-products">
         <div className="container">
-        <div className="products__heading">
+        <div className={`${DEFAULT_CLASSNAME}__heading`}>
             <h3 className="section-headings">{ProductsResult !== undefined ? ProductsResult.product_header : ""}</h3>
         </div>
 
-        <div className="products__items">
-            <div className="products__items-1">
+        <div className={`${DEFAULT_CLASSNAME}__items`}>
+            <div className={`${DEFAULT_CLASSNAME}__items-1`}>
                 <span className="title">{ProductsResult !== undefined ? ProductsResult.product_one_title : ""}</span>
                 <span className="info">{ProductsResult !== undefined ? ProductsResult.product_one_info : ""}</span>
             </div>
-            <div className="products__items-2">
+            <div className={`${DEFAULT_CLASSNAME}__items-2`}>
                 <span className="title">{ProductsResult !== undefined ? ProductsResult.product_two_title : ""}</span>
                 <span className="info">{ProductsResult !== undefined ? ProductsResult.product_two_info : ""}</span>
             </div>
-            <div className="products__items-3">
+            <div className={`${DEFAULT_CLASSNAME}__items-3`}>
                 <span className="title">{ProductsResult !== undefined ? ProductsResult.product_two_title : ""}</span>
                 <span className="info">{ProductsResult !== undefined ? ProductsResult.product_two_info : ""}</span>
             </div>

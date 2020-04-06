@@ -8,7 +8,6 @@ import { Segment } from "semantic-ui-react";
 
 export default function ContactPage() {
 
-
     return(
         <Segment>
             <Navbar />

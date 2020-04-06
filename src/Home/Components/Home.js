@@ -26,8 +26,6 @@ export default function Home() {
         fetch("http://localhost/LUFC_news/wp-json/acf/v3/pages/24?_embed")
               .then(response => response.json())
               .then(data => setData(data));
-  
-           console.log(data.acf);
       }
           getData();
   

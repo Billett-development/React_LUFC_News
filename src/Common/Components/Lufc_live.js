@@ -2,21 +2,23 @@ import React from 'react';
 
 import '../Styles/_Lufclive.scss';
 
+const DEFAULT_CLASSNAME = "live";
+
 export default function Lufclive(){
     return(
         <div class="section-live">  
-        <div class="live">
-            <div class="live__heading">
+        <div className={DEFAULT_CLASSNAME}>
+            <div className={`${DEFAULT_CLASSNAME}__heading`}>
                 <h3 class="section-headings">lufc live</h3>
             </div>
-            <div class="live__score">
-                <div class="live__score-time">
+            <div className={`${DEFAULT_CLASSNAME}__score`}>
+                <div className={`${DEFAULT_CLASSNAME}__score-info`}>
                     <div>Championship 21/08/2019</div>
                     <div>Full Time</div>
                 </div>
 
-                <div class="live__score-teams">
-                    <div class="live__score-teams--leeds">
+                <div className={`${DEFAULT_CLASSNAME}__score-teams`}>
+                    <div className={`${DEFAULT_CLASSNAME}__score-teams--leeds`}>
                         <img src="img/west-brom-logo.jpg" alt="" />
                         <div>Leeds United</div>
                     </div>
@@ -24,21 +26,21 @@ export default function Lufclive(){
                     <div>1</div>
                     <div>-</div>
                     <div>0</div>
-                    <div class="live__score-teams--opposition">
+                    <div className={`${DEFAULT_CLASSNAME}__score-teams--opposition`}>
                         <img src="img/west-brom-logo.jpg" alt="" />
                         <div>Brentford</div>
                     </div>
                 </div>
 
-                <div class="live__score-scorers">
+                <div className={`${DEFAULT_CLASSNAME}__score-scorers`}>
                     <div>Eddie Nketiah  81'</div>
                     <div>goal-logo</div>
                     <div>Brentford scorer</div>
                 </div>
             </div>
 
-            <div class="live__stats">
-                <div class="live__stats-leeds">
+            <div className={`${DEFAULT_CLASSNAME}__stats`}>
+                <div className={`${DEFAULT_CLASSNAME}__stats-leeds`}>
                     <div><img src="img/west-brom-logo.jpg" alt="" /></div>
                     <div>11</div>
                     <div>4</div>
@@ -52,7 +54,7 @@ export default function Lufclive(){
                     <div>8</div>
                 </div>
 
-                <div class="live__stats-static">
+                <div className={`${DEFAULT_CLASSNAME}__stats-static`}>
                     <div>Team stats</div>
                     <div>Shots</div>
                     <div>Shots on target</div>
@@ -67,7 +69,7 @@ export default function Lufclive(){
                 </div>
 
 
-                <div class="live__stats-opposition">
+                <div className={`${DEFAULT_CLASSNAME}__stats-opposition`}>
                     <div><img src="img/west-brom-logo.jpg" alt="" /></div>
                     <div>11</div>
                     <div>4</div>

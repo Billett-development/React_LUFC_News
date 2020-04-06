@@ -1,5 +1,15 @@
 @import './main';
 
+.ion-icon {
+    font-size: 10rem;
+    transition: $animation;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.3);
+    }
+}
+
 .contact {
 
     display: flex;
@@ -18,16 +28,6 @@
         & * h5 { font-size: 2.5rem;}
 
         & * p {font-size: 1.5rem;}
-
-        & * > ion-icon { 
-            font-size: 10rem;
-            transition: $animation;
-            cursor: pointer;
-        
-            &:hover {
-                transform: scale(1.3);
-            }
-        }
     }
 
     &__heading {

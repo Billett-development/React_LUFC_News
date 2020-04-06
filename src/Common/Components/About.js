@@ -1,11 +1,8 @@
 import React from "react";
-import Image_1 from "../../Images/Common/leeds-players.jpg";
-import Image_2 from "../../Images/Common/leeds-player-2.jpg";
-import Image_3 from "../../Images/Common/leeds-image.jpg";
 
 import '../Styles/_About.scss';
 
-const DEFAULT_CLASSNAME = "hero";
+const DEFAULT_CLASSNAME = "about";
 
 export default function About(AboutObject) {
 
@@ -14,13 +11,13 @@ export default function About(AboutObject) {
     return(
         <div className="section-about">
             <div className="container">
-                <div className="about">
-                        <div className="about__info">
+                <div className={DEFAULT_CLASSNAME}>
+                        <div className={`${DEFAULT_CLASSNAME}__info`}>
                             <h3>{AboutInfoResult !== undefined ? AboutInfoResult.about_title : ""}</h3>
                             <p>{AboutInfoResult !== undefined ? AboutInfoResult.about_description : ""}</p>
                             
                         </div>
-                        <div className="about__images">
+                        <div className={`${DEFAULT_CLASSNAME}__images`}>
                             <div className="composition">
 
                                 <img 

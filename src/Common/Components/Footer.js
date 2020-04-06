@@ -1,41 +1,46 @@
 import React from "react";
-import Logo from "../../Images/Common/lufc-logo-lg.png";
+
+
+import { IoLogoFacebook } from "react-icons/io";
+import { IoLogoTwitter } from "react-icons/io";
+import { IoLogoPinterest } from "react-icons/io";
+import { IoLogoInstagram } from "react-icons/io";
+import { IoLogoYoutube } from "react-icons/io";
 
 import '../Styles/_Footer.scss';
 
-const DEFAULT_CLASSNAME = "hero";
+const DEFAULT_CLASSNAME = "footer";
 
 export default function Footer() {
     return(
         <div className="section-footer">
             <div className="container">
-            <div className="footer">
+            <div className={DEFAULT_CLASSNAME}>
 
-            <div className="footer__contact">
+            <div className={`${DEFAULT_CLASSNAME}__contact`}>
                    <h5>Get in touch</h5> 
 
-                <div className="footer__contact-address">
+                <div className={`${DEFAULT_CLASSNAME}__contact-address`}>
 
                     <p>15 Woodsdale Court, Dominion Road, Worthing,West Sussex, BN14 8JQ</p>  
                     
                 </div>
 
-                <div className="footer__contact-email">
+                <div className={`${DEFAULT_CLASSNAME}__contact-email`}>
                         <a href="#">info@lufcnews.co.uk</a> 
 
                 </div>
 
-                <div className="footer__contact-links">
-                    <ion-icon className="ion-icon" name="logo-facebook"></ion-icon>
-                    <ion-icon className="ion-icon" name="logo-twitter"></ion-icon>
-                    <ion-icon className="ion-icon" name="logo-pinterest"></ion-icon>
-                    <ion-icon className="ion-icon" name="logo-instagram"></ion-icon>
-                    <ion-icon className="ion-icon" name="logo-youtube"></ion-icon>
+                <div className={`${DEFAULT_CLASSNAME}__contact-links`}>
+                    <IoLogoFacebook className="ion-icon-footer" />
+                    <IoLogoTwitter className="ion-icon-footer" />
+                    <IoLogoPinterest className="ion-icon-footer" />
+                    <IoLogoInstagram className="ion-icon-footer" />
+                    <IoLogoYoutube className="ion-icon-footer" />
                 </div>
             </div>
 
-
-                <div className="footer__hours">
+                <div className={`${DEFAULT_CLASSNAME}__hours`}>
                     <h5>Working hours</h5>
 
                     <ul>
@@ -48,7 +53,7 @@ export default function Footer() {
                     </ul>
                 </div> 
 
-                <div className="footer__information">
+                <div className={`${DEFAULT_CLASSNAME}__information`}>
                     <h5>Information</h5>
                     <ul>
                         <li><a href="">Terms &amp; Conditions</a></li>
@@ -61,11 +66,11 @@ export default function Footer() {
                 </div>
 
 
-                <div className="footer__newsletter">
+                <div className={`${DEFAULT_CLASSNAME}__newsletter`}>
                     <h5>Newsletter</h5>
                     <p>Subscribe to our newsletter and get 10% off your first purchase</p>
 
-                    <div className="footer__newsletter-subscribe">
+                    <div className={`${DEFAULT_CLASSNAME}__newsletter-subscribe`}>
                         <input type="email" className="footer_email-btn" placeholder="Enter your email" />
                         <button>Sign up</button>
                     </div>
@@ -75,7 +80,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="footer__copyright">
+        <div className={`${DEFAULT_CLASSNAME}__copyright`}>
             &copy; Copyright 2020 Lufcnews.co.uk is a partner of Football News UK LTD which is a 
                 limited company registered in England and Wales with a registered office at 15 Woodsdale Court, 
                 Dominion Road, Worthing, West Sussex, BN14 8JQ, registered number: 12060029. All Rights Reserved.
