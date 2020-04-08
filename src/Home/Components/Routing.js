@@ -8,7 +8,7 @@ import Home from './Home';
 import AboutPage from './About';
 import ContactPage from './Contact';
 import lufcLive from './Lufc_live';
-
+import Footer from "../../Common/Components/Footer";
 
 
 export default function Routing() {
@@ -23,6 +23,7 @@ export default function Routing() {
           <Route path="/lufcLive" component={lufcLive} />
           <Route path="/contact"  component={ContactPage}/>
         </Switch>
+        <Footer />
       </div>
     </Router>
     

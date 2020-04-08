@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 
 import { IoLogoFacebook } from "react-icons/io";
 import { IoLogoTwitter } from "react-icons/io";
@@ -18,19 +18,14 @@ export default function Footer() {
             <div className={DEFAULT_CLASSNAME}>
 
             <div className={`${DEFAULT_CLASSNAME}__contact`}>
-                   <h5>Get in touch</h5> 
-
+                   <h5>Get in touch</h5>
                 <div className={`${DEFAULT_CLASSNAME}__contact-address`}>
-
                     <p>15 Woodsdale Court, Dominion Road, Worthing,West Sussex, BN14 8JQ</p>  
-                    
                 </div>
-
                 <div className={`${DEFAULT_CLASSNAME}__contact-email`}>
                         <a href="#">info@lufcnews.co.uk</a> 
 
                 </div>
-
                 <div className={`${DEFAULT_CLASSNAME}__contact-links`}>
                     <IoLogoFacebook className="ion-icon-footer" />
                     <IoLogoTwitter className="ion-icon-footer" />
@@ -39,10 +34,8 @@ export default function Footer() {
                     <IoLogoYoutube className="ion-icon-footer" />
                 </div>
             </div>
-
                 <div className={`${DEFAULT_CLASSNAME}__hours`}>
                     <h5>Working hours</h5>
-
                     <ul>
                         <li>Monday    - 9:30am–5pm</li>
                         <li>Wednesday - 9:30am–5pm</li>
@@ -60,11 +53,10 @@ export default function Footer() {
                         <li><a href="">Privacy Policy</a></li>
                         <li><a href="">LUFC News Shop</a></li>
                         <li><a href="">LUFC Zone</a></li>
-                        <li><a href="">LUFC live</a></li>
-                        <li><a href="">Contact</a></li>
+                        <Link to="/lufcLive"><li><a href="">LUFC live</a></li></Link>
+                        <Link to="/contact"><li><a href="">Contact</a></li></Link>
                     </ul>
                 </div>
-
 
                 <div className={`${DEFAULT_CLASSNAME}__newsletter`}>
                     <h5>Newsletter</h5>

@@ -9,9 +9,7 @@ import { Segment } from "semantic-ui-react";
 export default function lufcLive(){
     return(
     <Segment>
-        <Navbar />
         <Lufclive />
-        <Footer />
     </Segment>
     );
 }

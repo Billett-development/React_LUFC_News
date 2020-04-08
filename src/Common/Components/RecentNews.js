@@ -10,58 +10,39 @@ export default function RecentNews(RecentObject) {
 
     const RecentNewsResult = RecentObject.RecentNews;
 
+    const posts = RecentNewsResult.map((post) => (
+        
+        <div
+          className="news__articles-item"
+          key={post.id.rendered}
+          style={{
+            backgroundImage: `url(${post._embedded["wp:featuredmedia"]["0"].source_url}})`,
+          }}
+        >
+          <div className="news__articles-item-overlay">
+            <div className="news__articles-item-text">
+              <h3>{post.title.rendered}</h3>
+              <p>{post.excerpt.rendered}</p>
+            </div>
+          </div>
+        </div>
+      ));
+
   return (
-
     <div className="section-news">
-    <div className="container">
-        <div className={`${DEFAULT_CLASSNAME}__heading`}>
-                <h3 className="section-headings">{RecentNewsResult !== undefined ? RecentNewsResult.recent_news_title : ""}</h3>
+      <div className="container">
+        <div className="news__heading">
+          <h3 className="section-headings">Recent News</h3>
         </div>
-
-        <div className={`${DEFAULT_CLASSNAME}__articles`}>
-        <div className={`${DEFAULT_CLASSNAME}__articles-1`}>
-            <div className={`${DEFAULT_CLASSNAME}__articles-1-overlay`}>
-                <div className={`${DEFAULT_CLASSNAME}__articles-1-text`}>
-                    <h3>{RecentNewsResult !== undefined ? RecentNewsResult.top_left_description : ""}</h3>
-                    <p>{RecentNewsResult !== undefined ? RecentNewsResult.top_left_sub_description : ""}</p>
-                </div>
-            </div>
+        <div>
+        <div className="news__articles">{posts}</div>
         </div>
-
-        <div className={`${DEFAULT_CLASSNAME}__articles-2`}>
-            <div className={`${DEFAULT_CLASSNAME}__articles-2-overlay`}>
-                <div className={`${DEFAULT_CLASSNAME}__articles-2-text`}>
-                <h3>{RecentNewsResult !== undefined ? RecentNewsResult.top_right_description : ""}</h3>
-                <p>{RecentNewsResult !== undefined ? RecentNewsResult.top_right_sub_description : ""}</p>
-                </div>
-            </div>
+        <div className="news__articles-btn">
+          <a href="index.js" className="btn-inverse">
+            Click to see more news
+          </a>
         </div>
-
-        <div className={`${DEFAULT_CLASSNAME}__articles-3`}>
-            <div className={`${DEFAULT_CLASSNAME}__articles-3-overlay`}>
-                <div className={`${DEFAULT_CLASSNAME}__articles-3-text`}>
-                <h3>{RecentNewsResult !== undefined ? RecentNewsResult.bottom_left_description : ""}</h3>
-                <p>{RecentNewsResult !== undefined ? RecentNewsResult.bottom_left_sub_description : ""}</p>
-                </div>
-            </div>
-        </div>
-        <div className={`${DEFAULT_CLASSNAME}__articles-4`}>
-            <div className={`${DEFAULT_CLASSNAME}__articles-4-overlay`}>
-                <div className={`${DEFAULT_CLASSNAME}__articles-4-text`}>
-                <h3>{RecentNewsResult !== undefined ? RecentNewsResult.bottom_right_description : ""}</h3>
-                <p>{RecentNewsResult !== undefined ? RecentNewsResult.bottom_right_sub_description : ""}</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-
-    <div className={`${DEFAULT_CLASSNAME}__articles-btn`}>
-        <a href="index.js" className="btn-inverse">{RecentNewsResult !== undefined ? RecentNewsResult.recent_news_button : ""}</a>
-    </div>
-
-</div>
-</div>
-
-
   );
 }

@@ -15,8 +15,8 @@ export default class Navbar extends React.Component {
     window.addEventListener("scroll", this.resizeHeaderOnScroll);
   }
   resizeHeaderOnScroll() {
-    const distanceY = window.pageYOffset || document.documentElement.scrollTop,
-      shrinkOn = 200,
+    const distanceY = window.pageYOffset || document.documentElement.scrollTop, 
+    shrinkOn = 200,
       navEl = document.getElementById("shrink-head"),
       logoEl = document.getElementById("shrink-logo");
     if (distanceY > shrinkOn) {
@@ -53,8 +53,6 @@ export default class Navbar extends React.Component {
       </div>
     </div>
 
-
-
     <div className="navigation__mobile">
 
         <input type="checkbox" className="navigation__mobile-checkbox" id="navi-toggle" />
@@ -67,12 +65,13 @@ export default class Navbar extends React.Component {
 
         <nav className="navigation__mobile-nav">
               <ul className="navigation__mobile-list">
+                  <Link to="/"><li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">home</a></li></Link>
                   <li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">news</a></li>
-                  <li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">about</a></li>
+                  <Link to="/about"><li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">about</a></li></Link>
                   <li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">lufc zone</a></li>
-                  <li className="navigation__mobile-item"><a href="lufc-live.html" className="navigation__mobile-link">lufc live</a></li>
+                  <Link to="/lufcLive"><li className="navigation__mobile-item"><a href="lufc-live.html" className="navigation__mobile-link">lufc live</a></li></Link>
                   <li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">merch</a></li>
-                  <li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">contact</a></li>
+                  <Link to="/contact"><li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">contact</a></li></Link>
               </ul>
 
               <div className="navigation__mobile-socials">

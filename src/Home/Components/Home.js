@@ -15,8 +15,9 @@ import { Segment } from "semantic-ui-react";
 export default function Home() {
 
     const [data, setData] = useState([]);
+    const [homeData, setHomeData] = useState([]);
 
-    const dataIsLoaded = data.acf !== undefined ? true : false;
+    const dataIsLoaded = homeData.acf !== undefined ? true : false;
   
   
     useEffect(() => {
@@ -25,22 +26,31 @@ export default function Home() {
   
         fetch("http://localhost/LUFC_news/wp-json/acf/v3/pages/24?_embed")
               .then(response => response.json())
-              .then(data => setData(data));
+              .then(homeData => setHomeData(homeData));
+
+              console.log(homeData);
       }
-          getData();
-  
+
+      function getWordpressPosts() {
+        fetch("http://localhost/LUFC_news/wp-json/wp/v2/posts?_embed")
+          .then((response) => response.json())
+          .then((data) => setData(data));
+      }
+
+        getData();
+        getWordpressPosts();
+
     }, [dataIsLoaded]);
     
     return (
         <Segment>
         <HeroVideo />
         <HeroOverlay />
-        <RecentNews RecentNews={data.acf} />
-        <About AboutInfo={data.acf} />
+        <RecentNews RecentNews={data} />
+        <About AboutInfo={homeData.acf} />
         <Highlights />
-        <Products Products={data.acf}/>
-        <Partners Partners={data.acf}/>
-        <Footer />
+        <Products Products={homeData.acf}/>
+        <Partners Partners={homeData.acf}/>
         </Segment>
     )
 
