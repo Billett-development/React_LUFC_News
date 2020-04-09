@@ -20,6 +20,10 @@
             transition-delay: 0s;
          }
 
+        .title {
+            text-transform: uppercase;
+        }
+
         &:focus,
         &:hover { 
             &:before,

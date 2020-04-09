@@ -11,6 +11,7 @@ const DEFAULT_CLASSNAME = "products";
 
 
 export default class Products extends React.Component {
+
     render(){
         const settings = {
             dots: true,

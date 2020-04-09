@@ -210,10 +210,7 @@
 
 
       &-checkbox:checked ~ &-background {
-
           transform: scale(80);
-          
-          
       }
 
       &-checkbox:checked ~ &-icon {
@@ -280,7 +277,6 @@
 
       // clicking animation (burger menu to cross)
       &-checkbox:checked + &-button &-icon::before {
-
           top: 0;
           transform: rotate(135deg);
       }
