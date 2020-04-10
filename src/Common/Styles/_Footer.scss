@@ -11,6 +11,7 @@
 
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
 
     @include respond(phone){
@@ -37,6 +38,10 @@
             width: 30%;
             margin-right: 2.5%;
 
+            @include respond(phone){
+                flex-basis: 49%;
+            }
+
             &-address {
 
                 display: flex;
@@ -60,6 +65,7 @@
                 @include respond(phone){
 
                     font-size: 1.7rem;
+                    height: 15%;
                 }
                 
                     a  { 
@@ -72,7 +78,18 @@
 
                 display: flex;
                 height: 30%;
-                justify-content: space-around;
+                justify-content: space-between;
+                margin-bottom: 2rem;
+
+                @include respond(phone){
+                    flex-basis: 48%;
+                    width: 90%;
+                }
+
+                a {
+                    color: white;
+                    margin-bottom: 2rem;
+                }
 
             }
     }
@@ -82,14 +99,13 @@
 
         width: 20%;
 
+        @include respond(phone){
+            flex-basis: 48%;
+        }
+
         li {
             list-style: none;
             font-size: 1.5rem;
-
-            @include respond(phone){
-
-                font-size: 1.1rem;
-            }
         }
 
 
@@ -101,8 +117,11 @@
         
         width: 20%;
         font-size: 1.5rem;
-        
 
+        @include respond(phone){
+            flex-basis: 48%;
+        }
+    
         li {
                 list-style: none;
                     a { color: $color-white; } 
@@ -115,6 +134,10 @@
 
         width: 20%;
         font-size: 1.5rem;
+
+        @include respond(phone){
+            flex-basis: 48%;
+        }
 
         &-subscribe {
 

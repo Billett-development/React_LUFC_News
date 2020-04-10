@@ -5,6 +5,12 @@
     display: flex;
     justify-content: space-between;
 
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+
+
     &__info {
         
         display: flex;
@@ -19,6 +25,10 @@
                 font-size: 4rem;
                 margin-top: 20%;
                 text-transform: uppercase;
+
+                @include respond(phone) {
+                    text-align: center;
+                }
             }
 
             p {
@@ -73,7 +83,12 @@
         position: relative;
         padding: 3rem;
         margin-top: 5rem;
-
+        
+        @include respond(phone) {
+            padding: 2rem;
+            margin-top: 2rem;
+            
+         }
     }
 
             @include respond(tab-land) {
@@ -86,12 +101,6 @@
                 height: 30vh;
                 margin-top: 2rem;
             }
-
-            @include respond(phone) {
-                margin-top: 2rem;
-                height: 20vh;
-                 
-             }
         
     }
 
@@ -114,8 +123,9 @@
             position: relative;
             box-shadow: 0 1.5rem 3rem rgba($color-black, .2);
         }
+
         @include respond(phone)  {
-           width: 80%;
+           width: 40%;
         }
 
         &--p1 {
@@ -128,6 +138,7 @@
 
             @include respond(phone)  {
                 top: 0;
+                left: 10%;
             }
         }
 
@@ -138,10 +149,11 @@
             @include respond(tab-port)  {
                 top: -3rem;
                 left: 5rem;
-                z-index: 100;
+                z-index: 15;
             }
             @include respond(phone)  {
-
+                top: 7rem;
+                left: -5rem;
             }
         }
 
@@ -155,8 +167,8 @@
             }
 
             @include respond(phone)  {
-                top: -14rem;
-                left: 9rem;
+                left: 1.5rem;
+                top: -9rem;
             }
         }
 
@@ -165,12 +177,22 @@
             transform: scale(1.05) translateY(-.5rem);
             box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
             z-index: 20;
+
+            @include respond(phone)  {
+                transform: none;
+                outline: none;
+                box-shadow: 0;
+            }
         }
 
     }
 
     &:hover &__photo:not(:hover) {
         transform: scale(.95);
+
+        @include respond(phone)  {
+            transform: none;
+        }
     }
     //composition:hover composition__photo:not(:hover) {
 }

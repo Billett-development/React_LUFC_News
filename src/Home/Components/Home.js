@@ -17,7 +17,6 @@ export default function Home() {
 
     const dataIsLoaded = homeData.acf !== undefined ? true : false;
   
-  
     useEffect(() => {
   
       function getData() {

@@ -1,12 +1,6 @@
 import React from "react";
 import Bounce from 'react-reveal/Bounce';
 
-import Logo from "../../Images/Common/lufc-logo-lg.png";
-import Army from "../../Images/Common/Army-photo.jpg";
-import Univ from "../../Images/Common/university-of-winchester.png";
-import Stats from "../../Images/Common/lufc-stats.jpg";
-
-
 import '../Styles/_AboutTimeline.scss';
 
 const DEFAULT_CLASSNAME = "timeline";

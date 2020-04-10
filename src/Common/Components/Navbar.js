@@ -3,6 +3,12 @@ import Logo from "../../Images/Common/header-logo.png";
 
 import { Link } from 'react-router-dom';
 
+import { IoLogoFacebook } from "react-icons/io";
+import { IoLogoTwitter } from "react-icons/io";
+import { IoLogoPinterest } from "react-icons/io";
+import { IoLogoInstagram } from "react-icons/io";
+import { IoLogoYoutube } from "react-icons/io";
+
 
 import '../Styles/_Navbar.scss';
 
@@ -54,15 +60,12 @@ export default class Navbar extends React.Component {
     </div>
 
     <div className="navigation__mobile">
-
+    
         <input type="checkbox" className="navigation__mobile-checkbox" id="navi-toggle" />
-
         <label for="navi-toggle" className="navigation__mobile-button">
             <span className="navigation__mobile-icon">&nbsp;</span>
         </label>
-
         <div className="navigation__mobile-background">&nbsp;</div>
-
         <nav className="navigation__mobile-nav">
               <ul className="navigation__mobile-list">
                   <Link to="/"><li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">home</a></li></Link>
@@ -75,27 +78,19 @@ export default class Navbar extends React.Component {
               </ul>
 
               <div className="navigation__mobile-socials">
-                  <ion-icon className="ion-icon" name="logo-facebook"></ion-icon>
-                  <ion-icon className="ion-icon" name="logo-twitter"></ion-icon>
-                  <ion-icon className="ion-icon" name="logo-instagram"></ion-icon>
-                  <ion-icon className="ion-icon" name="logo-youtube"></ion-icon>
+                  <a href=""><IoLogoFacebook className="ion-icon-nav" /></a>
+                  <a href=""><IoLogoInstagram className="ion-icon-nav" /></a>
+                  <a href=""><IoLogoTwitter className="ion-icon-nav" /></a>
+                  <a href=""><IoLogoYoutube className="ion-icon-nav" /></a>
               </div>
         </nav>
-
-    </div> 
-
-
+      </div> 
     </div>
-    
-
     );
   }
 
 
 }
-
-
-
 
 // export default function Navbar() {
 

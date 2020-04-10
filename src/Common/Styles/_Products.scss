@@ -77,3 +77,15 @@
 
         }
     }
+
+.slick-prev:before, .slick-next:before {
+    color: $primary-blue;
+}
+
+.slick-slider {
+
+    @include respond(tab-land)  {
+        width: 90%;
+        margin: auto;
+    }
+}

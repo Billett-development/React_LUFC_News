@@ -145,25 +145,3 @@ export default class Products extends React.Component {
 //     );
 // }
 
-
-// function SamplePrevArrow(props) {
-//     const { className, style, onClick } = props;
-//     return (
-//       <div
-//         className={className}
-//         style={{ ...style, display: "block", color: "red" }}
-//         onClick={onClick}
-//       />
-//     );
-//   }
-
-//   function SampleNextArrow(props) {
-//     const { className, style, onClick } = props;
-//     return (
-//       <div
-//         className={className}
-//         style={{ ...style, display: "block", backgroundColor: "lightblue"}}
-//         onClick={onClick}
-//       />
-//     );
-//   }

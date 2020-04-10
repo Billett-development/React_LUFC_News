@@ -5,6 +5,10 @@
     position: relative;
     color: $primary-blue;
 
+    @include respond(phone){
+        margin-top: 0;
+     }
+
     &::after {
         content: '';
         position: absolute;
@@ -35,10 +39,20 @@
             top: 18px;
             border-radius: 50%;
             z-index: 111;
+
+            @include respond(tab-land){
+                width: 20px;
+                height: 20px;
+                right: -27px;
+             }
         }
 
         &-left {
             right: 2.5%;
+
+            @include respond(phone){
+                right: 6%;
+             }
             &::before { // before element for the container arrow
                 content: " ";
                 height: 0;
@@ -50,11 +64,20 @@
                 border: medium solid $primary-blue;
                 border-width: 13px 0 13px 13px;
                 border-color: transparent transparent transparent $primary-blue;
+
+                @include respond(tab-land){
+                    right: -6px;
+                    top: 15px;
+                 }
             }
         }
     
         &-right {
             left: 52.5%;
+
+            @include respond(phone){
+                left: 56%;
+             }
             &::before {
                 content: " ";
                 height: 0;
@@ -66,11 +89,22 @@
                 border: medium solid  $primary-blue;
                 border-width: 13px 13px 13px 0;
                 border-color: transparent  $primary-blue transparent transparent;
+
+                @include respond(tab-land){
+                    left: -6px;
+                    top: 15px;
+                 }
+
+                
             }
     
             &::after { // make sure the circle is on the timeline
     
                 left: -43.24px;
+
+                @include respond(tab-land){
+                    left: -28px;
+                 }
             }
     
         }
@@ -102,14 +136,24 @@
                 text-transform: uppercase;
                 padding: 2rem;
                 color: $color-white;
+
+                @include respond(tab-port){
+                    font-size: 1.5rem;
+                    padding: 1rem;
+                    width: 100%;
+                 }
             }
 
             span {
 
-                
                 padding: 1.8rem;
                 font-size: 2rem;
                 color: $color-white;
+
+                @include respond(tab-port){
+                    padding: 5.5px;
+                    font-size: 1.1rem;
+                 }
 
             }
             
@@ -128,6 +172,10 @@
             padding: 1rem;
             font-size: 1.7rem;
             border-bottom: $border-1px;
+
+            @include respond(tab-port){
+                font-size: 1.5rem;
+             }
         }
         &-img {
             
