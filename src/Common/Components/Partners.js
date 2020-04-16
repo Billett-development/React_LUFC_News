@@ -8,7 +8,8 @@ const DEFAULT_CLASSNAME = "partners";
 export default function HeroOverlay(PartnersObject) {
 
     const PartnersResult = PartnersObject.Partners;
-
+    console.log(PartnersResult);
+    
     if (PartnersResult !== undefined) {
       const partnerItem = PartnersResult.partnerrepeater.map(
         (partner) => (

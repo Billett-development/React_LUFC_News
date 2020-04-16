@@ -7,7 +7,6 @@ const DEFAULT_CLASSNAME = "about";
 export default function About(AboutObject) {
 
     const AboutInfoResult = AboutObject.AboutInfo;
-
     return(
         <div className="section-about">
             <div className="container">

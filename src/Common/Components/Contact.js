@@ -1,7 +1,6 @@
-import React from 'react';
-import { IoIosCall } from "react-icons/io";
-import { IoIosPin } from "react-icons/io";
-import { IoMdMail } from "react-icons/io";
+import React, { useState } from 'react';
+import axios from "axios";
+import { IoIosCall, IoIosPin, IoMdMail  } from "react-icons/io";
 
 import SimpleMap from './Maps';
 
@@ -10,7 +9,36 @@ import '../Styles/_Contact.scss';
 const DEFAULT_CLASSNAME = "contact";
 
 export default function Contact() {
-
+    const [serverState, setServerState] = useState({
+        submitting: false,
+        status: null
+      });
+    
+      const handleServerResponse = (ok, msg, form) => {
+        setServerState({
+          submitting: false,
+          status: { ok, msg }
+        });
+        if (ok) {
+          form.reset();
+        }
+      };
+      const handleOnSubmit = e => {
+        e.preventDefault();
+        const form = e.target;
+        setServerState({ submitting: true });
+        axios({
+          method: "post",
+          url: "https://formspree.io/mvobdenk",
+          data: new FormData(form)
+        })
+          .then(r => {
+            handleServerResponse(true, "Thanks!", form);
+          })
+          .catch(r => {
+            handleServerResponse(false, r.response.data.error, form);
+          });
+      };
     return(
         <div className="section-contact">
                 <div className={DEFAULT_CLASSNAME}>
@@ -40,14 +68,14 @@ export default function Contact() {
                         <p>Use the form below to send us an email</p>
                     </div>
 
-                    <form action="#" className={`${DEFAULT_CLASSNAME}__form`}>
+                    <form onSubmit={handleOnSubmit} className={`${DEFAULT_CLASSNAME}__form`}>
 
                         <div className="contact__name">
                             <div className="contact__name-label">
                                 <label for="full-name">name</label>
                             </div>
                             <div className="contact__name-full">
-                                <input name="full-name" type="text" value="" className="contact__name-full-input" required />
+                                <input name="full-name" type="text" className="contact__name-full-input" required />
                             </div>
                         </div>
     
@@ -56,7 +84,7 @@ export default function Contact() {
                                 <label for="email">email</label>
                             </div>
                             <div class="contact__email-input">
-                                <input name="email" type="email" value="" required class="contact__email-input-email" />
+                                <input name="email" type="email" required class="contact__email-input-email" />
                             </div>
                         </div>
 
@@ -65,7 +93,7 @@ export default function Contact() {
                                 <label for="subject">subject</label>
                             </div>
                             <div class="contact__subject-input">
-                                <input name="subject" type="text" value="" required class="contact__subject-input-subject" />
+                                <input name="subject" type="text" required class="contact__subject-input-subject" />
                             </div>
                         </div>
     
@@ -81,8 +109,13 @@ export default function Contact() {
     
                         <div class="contact__submit">
                             <div class="contact__submit-btn">
-                                <button class="btn-blue">Submit</button>
+                                <button disabled={serverState.submitting} class="btn-blue">Submit</button>
                             </div>
+                                    {serverState.status && (
+                                        <p className={!serverState.status.ok ? "errorMsg" : ""}>
+                                        {serverState.status.msg}
+                                        </p>
+                                    )}
                         </div>
                     </form>
                 </div>

@@ -33,16 +33,18 @@
 
         &-text {
 
+            width: 70%;
+
             @include absCenter;
             color: $color-white;
 
             h3 {
                 font-size: 3rem;
+                padding-bottom: 2rem;
             }
 
             p {
-                font-size: 2rem;
-                text-align: center;
+                font-size: 1.7rem;
             }
         }
 

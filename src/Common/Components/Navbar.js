@@ -42,11 +42,11 @@ export default class Navbar extends React.Component {
 
     <div columns={7} className={DEFAULT_CLASSNAME} id="shrink-head">
       <div className={`${DEFAULT_CLASSNAME}__list`}>
-        <div className={`${DEFAULT_CLASSNAME}__item`}>NEWS</div>
+        <Link to="/news"><div className={`${DEFAULT_CLASSNAME}__item`}>NEWS</div></Link>
 
         <Link to="/about"><div className={`${DEFAULT_CLASSNAME}__item`}>ABOUT</div></Link>
 
-        <div className={`${DEFAULT_CLASSNAME}__item`}>LUFC ZONE</div>
+        <Link to="/Lufc-Zone"><div className={`${DEFAULT_CLASSNAME}__item`}>LUFC ZONE</div></Link>
 
         <Link to="/"><div><img id="shrink-logo" alt="LUFC logo" src={Logo} className={`${DEFAULT_CLASSNAME}__item-logo`} /></div></Link>
 
@@ -69,7 +69,7 @@ export default class Navbar extends React.Component {
         <nav className="navigation__mobile-nav">
               <ul className="navigation__mobile-list">
                   <Link to="/"><li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">home</a></li></Link>
-                  <li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">news</a></li>
+                  <Link to="/post"><li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">news</a></li></Link>
                   <Link to="/about"><li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">about</a></li></Link>
                   <li className="navigation__mobile-item"><a href="#" className="navigation__mobile-link">lufc zone</a></li>
                   <Link to="/lufcLive"><li className="navigation__mobile-item"><a href="lufc-live.html" className="navigation__mobile-link">lufc live</a></li></Link>

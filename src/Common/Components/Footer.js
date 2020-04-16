@@ -26,8 +26,6 @@ export default function Footer() {
                 .then(homeData => setHomeData(homeData));
         }
           getData();
-          console.log(homeData.acf);
-  
       }, [dataIsLoaded]);
 
 

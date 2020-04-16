@@ -4,11 +4,25 @@
 
     &__items {
 
-        border-radius: $border-radius;
+         a {&:hover { 
+             text-decoration: none;
+            }
+            &:hover img {
+                filter: brightness(65%);
+            }}
+
         margin-left: 10%;
         position: relative;
 
+        &:hover .purchasing div{
+            background-color: #fff;
+            color: $primary-blue;
+            text-decoration: none;
+            border-left: 1px solid $primary-blue;
+        }
+
         span { 
+            
             display: block;
             opacity: 0;
             position: absolute;
@@ -22,6 +36,34 @@
 
         .title {
             text-transform: uppercase;
+        }
+
+        .purchasing {
+            display: flex;
+            border: 1px solid $primary-blue;
+            width: 80%;
+
+            p {
+                background-color: #fff;
+                font-size: 180%;
+                font-weight: 600;
+                width: 50%;
+                padding: .5rem;
+                text-align: center;
+            }
+
+            div {
+                width: 50%;
+                background-color: $primary-blue;
+                transition: .4s all;
+                color: white;
+                padding: .5rem;
+                font-size: 180%;
+                border: none;
+                text-align: center;
+                text-decoration: none;
+            }
+
         }
 
         &:focus,
@@ -48,14 +90,8 @@
                 .title {
                     transition-delay: 0.15s;
                     font-weight: 600;
-                    font-size: 3.5rem;
-                    text-transform: uppercase;
-                }
-                
-                .info {
-                    transition-delay: 0.20s;
                     font-size: 2rem;
-                    top: 87%;
+                    text-transform: uppercase;
                 }
          }
 
@@ -63,16 +99,12 @@
                  
                 width: 80% !important;
                 border-radius: $border-radius;
+                border-bottom-left-radius: none;
+                border-bottom-right-radius: none;
                 position: relative;
                 background-size: cover;
                 background-position: center;
                 cursor: pointer;
-                   
-                &:hover {
-                    filter: brightness(50%);
-                }
-
-
              }
 
         }

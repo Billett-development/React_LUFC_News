@@ -13,6 +13,26 @@ const DEFAULT_CLASSNAME = "products";
 export default class Products extends React.Component {
 
     render(){
+
+        let productsData = this.props.Products;
+        console.log(productsData)
+
+        if (productsData !== undefined) {
+            const productItem = productsData.products.map(
+              (product) => (
+                <div className={`${DEFAULT_CLASSNAME}__items`}>
+                    <a href={product.product_link}>
+                        <img src={product.product_image.url} alt="add alt here"/>
+                        <span className="title">{product.product_title}</span>
+                        <div className="purchasing">
+                            <p>£{product.product_price}</p>
+                            <div href={product.product_link}>View</div>
+                        </div>
+                    </a>
+                </div>
+              )
+            );
+
         const settings = {
             dots: true,
             infinite: true,
@@ -54,94 +74,13 @@ export default class Products extends React.Component {
             <div className={`${DEFAULT_CLASSNAME}__heading`}>
                 <h3 className="section-headings">Best selling products</h3>
             </div>
-
             <Slider {...settings} className={DEFAULT_CLASSNAME}>
-
-                <div className={`${DEFAULT_CLASSNAME}__items`}>
-                    <img src={Image} alt="add alt here"/>
-                    <span className="title">Product title</span>
-                    <span className="info">info about the product</span>
-                </div>
-
-                <div className={`${DEFAULT_CLASSNAME}__items`}>
-                    <img src={Image} alt="add alt here"/>
-                    <span className="title">Product title</span>
-                    <span className="info">info about the product</span>
-                </div>
-
-                <div className={`${DEFAULT_CLASSNAME}__items`}>
-                    <img src={Image} alt="add alt here"/>
-                    <span className="title">Product title</span>
-                    <span className="info">info about the product</span>
-                </div>
-
-                <div className={`${DEFAULT_CLASSNAME}__items`}>
-                    <img src={Image} alt="add alt here"/>
-                    <span className="title">Product title</span>
-                    <span className="info">info about the product</span>
-                </div>
-
-                <div className={`${DEFAULT_CLASSNAME}__items`}>
-                    <img src={Image} alt="add alt here"/>
-                    <span className="title">Product title</span>
-                    <span className="info">info about the product</span>
-                </div>
-
-                <div className={`${DEFAULT_CLASSNAME}__items`}>
-                    <img src={Image} alt="add alt here"/>
-                    <span className="title">Product title</span>
-                    <span className="info">info about the product</span>
-                </div>
-
-                <div className={`${DEFAULT_CLASSNAME}__items`}>
-                    <img src={Image} alt="add alt here"/>
-                    <span className="title">Product title</span>
-                    <span className="info">info about the product</span>
-                </div>
-
-                <div className={`${DEFAULT_CLASSNAME}__items`}>
-                    <img src={Image} alt="add alt here"/>
-                    <span className="title">Product title</span>
-                    <span className="info">info about the product</span>
-                </div>
-
+                {productItem}
             </Slider>
         </div>
         </div>
-    );
+                );
+            }
+        return null;
+    }
 }
-}
-
-// export default function Products(ProductsObject) {
-
-//     const ProductsResult = ProductsObject.Products;
-
-//     return(
-        // <div className="section-products">
-        // <div className="container">
-
-        // <div className={`${DEFAULT_CLASSNAME}__heading`}>
-        //     <h3 className="section-headings">{ProductsResult !== undefined ? ProductsResult.product_header : ""}</h3>
-        // </div>
-
-//         <div className={`${DEFAULT_CLASSNAME}__items-1`}>
-//         <span className="title">{ProductsResult !== undefined ? ProductsResult.product_one_title : ""}</span>
-//         <span className="info">{ProductsResult !== undefined ? ProductsResult.product_one_info : ""}</span>
-//         </div>
-        
-//         <div className={`${DEFAULT_CLASSNAME}__items-2`}>
-//         <span className="title">{ProductsResult !== undefined ? ProductsResult.product_two_title : ""}</span>
-//         <span className="info">{ProductsResult !== undefined ? ProductsResult.product_two_info : ""}</span>
-//         </div>
-        
-//         <div className={`${DEFAULT_CLASSNAME}__items-3`}>
-//         <span className="title">{ProductsResult !== undefined ? ProductsResult.product_two_title : ""}</span>
-//         <span className="info">{ProductsResult !== undefined ? ProductsResult.product_two_info : ""}</span>
-//         </div>
-
-
-//     </div>
-//     </div>
-//     );
-// }
-
