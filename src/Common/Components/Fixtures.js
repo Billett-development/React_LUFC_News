@@ -6,7 +6,7 @@ import '../Styles/_Fixtures.scss';
 export default function Fixtures() {
 
     return (
-        <section class="section-fixtures" style={{marginTop: "15rem"}}>
+    <section class="section-fixtures" style={{marginTop: "15rem"}}>
 
         <h3 class="section-headings">Fixtures & Results</h3>
 

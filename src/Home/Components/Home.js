@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Recaptcha from 'react-recaptcha';
 
 import HeroVideo from "../../Common/Components/HeroVideo";
 import HeroOverlay from "../../Common/Components/HeroOverlay";
@@ -24,6 +25,8 @@ export default function Home() {
         fetch("http://localhost/LUFC_news/wp-json/acf/v3/pages/24?_embed")
               .then(response => response.json())
               .then(homeData => setHomeData(homeData));
+
+              
       }
 
       function getWordpressPosts() {
@@ -43,7 +46,7 @@ export default function Home() {
         <HeroOverlay />
         <RecentNews RecentNews={data} />
         <About AboutInfo={homeData.acf} />
-        <Highlights />
+        <Highlights YoutubeVideo={homeData.acf}/>
         <Products Products={homeData.acf}/>
         <Partners Partners={homeData.acf}/>
         </Segment>

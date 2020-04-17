@@ -9,7 +9,7 @@
     &__video {
 
         width: 80%;
-        height: 65vh;
+        height: 70vh;
 
         @include respond(phone) {
             height: 25vh;

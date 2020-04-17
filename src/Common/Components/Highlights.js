@@ -5,7 +5,9 @@ import '../Styles/_Highlights.scss';
 
 const DEFAULT_CLASSNAME = "highlights";
 
-export default function Hightlights() {
+export default function Hightlights(data) {
+
+    const YoutubeData = data.YoutubeVideo
     return(
     <div className="section-highlights">
         <div className="container">
@@ -15,8 +17,8 @@ export default function Hightlights() {
             </div>
 
             <div className={`${DEFAULT_CLASSNAME}__video`}>
-                <iframe width="100%" height="100%" title="youtube video"
-                    src="https://www.youtube.com/embed/SX6p2nnZ6NM" 
+                <iframe width="100%" height="100%" title={YoutubeData !== undefined ? YoutubeData.video_title : ""}
+                    src={YoutubeData !== undefined ? YoutubeData.video_src : ""} 
                     frameborder="0" 
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
@@ -24,7 +26,7 @@ export default function Hightlights() {
             </div>
 
             <div className={`${DEFAULT_CLASSNAME}__credit`}>
-                Credit for the video: 
+                Credit: {YoutubeData !== undefined ? YoutubeData.video_credit : ""}
             </div>
     </div>
     </div>

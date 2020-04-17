@@ -2,42 +2,50 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { IoIosCall, IoIosPin, IoMdMail  } from "react-icons/io";
 
+import Recaptcha from 'react-recaptcha';
+
 import SimpleMap from './Maps';
 
 import '../Styles/_Contact.scss';
 
 const DEFAULT_CLASSNAME = "contact";
 
-export default function Contact() {
-    const [serverState, setServerState] = useState({
-        submitting: false,
-        status: null
-      });
-    
-      const handleServerResponse = (ok, msg, form) => {
-        setServerState({
-          submitting: false,
-          status: { ok, msg }
-        });
-        if (ok) {
-          form.reset();
-        }
-      };
-      const handleOnSubmit = e => {
-        e.preventDefault();
-        const form = e.target;
-        setServerState({ submitting: true });
-        axios({
-          method: "post",
-          url: "https://formspree.io/mvobdenk",
-          data: new FormData(form)
-        })
-          .then(r => {
-            handleServerResponse(true, "Thanks!", form);
-          })
-          .catch(r => {
-            handleServerResponse(false, r.response.data.error, form);
-          });
+export default function Contact(data) {
+
+
+    // CODE FOR THE ACF DATA
+    const ContactInfo = data.contactInfo;
+
+
+    // CONTACT THIRDPARTY CODE 
+            const [serverState, setServerState] = useState({
+                submitting: false,
+                status: null
+            });
+            const handleServerResponse = (ok, msg, form) => {
+                setServerState({
+                submitting: false,
+                status: { ok, msg }
+                });
+                if (ok) {
+                form.reset();
+                }
+            };
+            const handleOnSubmit = e => {
+                e.preventDefault();
+                const form = e.target;
+                setServerState({ submitting: true });
+                axios({
+                method: "post",
+                url: "https://formspree.io/mvobdenk",
+                data: new FormData(form)
+                })
+                .then(r => {
+                    handleServerResponse(true, "Thanks!", form);
+                })
+                .catch(r => {
+                    handleServerResponse(false, r.response.data.error, form);
+                });
       };
     return(
         <div className="section-contact">
@@ -47,18 +55,19 @@ export default function Contact() {
                         <div className={`${DEFAULT_CLASSNAME}__details-phone`}>
                             <IoIosCall className="ion-icon" />
                             <h5>Phone</h5>
-                            <p>+44 7712294836</p>
+                            <p>{ContactInfo !== undefined ? ContactInfo.contact_number : ""}</p>
                         </div>
                         <div className={`${DEFAULT_CLASSNAME}__details-post`}>
                             <IoIosPin className="ion-icon" />
                             <h5>Post</h5>
-                            <p>30 Jubille Road</p> <br />
-                            <p>Bath, BA2 8FB</p> <br />
+                            <p>{ContactInfo !== undefined ? ContactInfo.post_address : ""}</p> <br />
+                            <p>{ContactInfo !== undefined ? ContactInfo.post_address_2 : ""}</p>
+                            
                         </div>
                         <div className={`${DEFAULT_CLASSNAME}__details-email`}>
                             <IoMdMail className="ion-icon" />
                             <h5>Email</h5>
-                            <p>kaylembillett@hotmail.co.uk</p>
+                            <p>{ContactInfo !== undefined ? ContactInfo.email_address : ""}</p>
                         </div>
                     </div>
 
@@ -109,7 +118,7 @@ export default function Contact() {
     
                         <div class="contact__submit">
                             <div class="contact__submit-btn">
-                                <button disabled={serverState.submitting} class="btn-blue">Submit</button>
+                                <button onClick={this.handleSubscribe} disabled={serverState.submitting} class="btn-blue">Submit</button>
                             </div>
                                     {serverState.status && (
                                         <p className={!serverState.status.ok ? "errorMsg" : ""}>
