@@ -19,11 +19,7 @@ export default function Lufclive() {
         "https://api-football-v1.p.rapidapi.com/v2/fixtures/team/63/last/10",
         {
           method: "GET",
-          headers: {
-            "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-            "x-rapidapi-key":
-              "1d27eeb197mshf2f51e3de3b9f73p125222jsndb892b3f927e",
-          },
+
         }
       )
         .then((response) => response.json())
@@ -47,11 +43,7 @@ export default function Lufclive() {
           `https://api-football-v1.p.rapidapi.com/v2/statistics/fixture/${fixtureId}`,
           {
             method: "GET",
-            headers: {
-              "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-              "x-rapidapi-key":
-                "1d27eeb197mshf2f51e3de3b9f73p125222jsndb892b3f927e",
-            },
+
           }
         )
           .then((response) => response.json())
