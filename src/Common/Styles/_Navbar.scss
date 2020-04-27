@@ -16,9 +16,11 @@
       -webkit-box-shadow: 0 1px 0 0 #dadada;
       box-shadow: 0 1px 0 0 #dadada;
       position: fixed;
+      padding: 0 !important;
       -webkit-transition: all 1s ease;
       -o-transition: all 1s ease;
       transition: all 1s ease;
+
   }
   
 
@@ -28,7 +30,7 @@
       justify-content: space-evenly;
       align-items: center;
       height: 100%;
-
+        
       text-decoration: none;
       list-style: none;
       text-transform: uppercase;
@@ -40,8 +42,13 @@
       
       display: flex;
       justify-content: center;
-      
       position: relative;
+      padding: 3.3vh 10px;
+
+      @include respond(big-desktop){
+        padding: 2.5vh 0;
+
+    }
 
       cursor: pointer;
       font-weight: 700;
@@ -53,8 +60,6 @@
           display: flex;
           justify-content: center;
           align-items: center;
-
-          //background-image: url("../img/header-logo.png");
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;
@@ -96,8 +101,6 @@
           box-shadow: 0 1rem 3rem rgba(#555, .1);
           text-align: center;
           cursor: pointer;
-
-
       }
 
 
@@ -109,8 +112,8 @@
           border-radius: 50%;
           position: fixed;
           top: 6.5rem;
+          background-color: $primary-blue;
           right: 6.5rem;
-          background-image: radial-gradient($primary-blue, $primary-yellow);
           z-index: 1000;
           transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
 
@@ -118,9 +121,7 @@
           visibility: hidden;
 
           @include respond(phone){
-
               visibility: visible;
-          
            }
 
           //transform: scale(80);
@@ -156,35 +157,14 @@
 
       &-item {
           
-          margin: 1.5rem;
-      }
-
-
-      &-link {
-          &:link,
-          &:visited {
-  
-              display: inline-block;
-              font-size: 4rem;
-              font-weight: 300;
-              padding: 1rem 2rem;
-              color: $color-white;
-              text-decoration: none;
-              text-transform: uppercase;
-              background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $primary-blue 50%);
-              background-size: 220%;
-              transition: all .4s;
-  
-          }
-  
-          &:hover,
-          &:active {
-  
-              background-position: 100%;
-              color: $color-white;
-              transform: translateX(1rem);
-          }
-  
+          margin: 1rem;
+          display: flex;
+          font-size: 3rem;
+          font-weight: 300;
+          padding: 1rem 2rem;
+          color: $color-white;
+          text-decoration: none;
+          text-transform: uppercase;
       }
 
       &-socials {
@@ -193,6 +173,11 @@
           width: 100vw;
           justify-content: space-around;
           margin-top: 175%;
+
+          @include respond(phone){
+            margin-top: 155%;
+         }
+
 
       }
 
@@ -242,12 +227,10 @@
 
       //hover line spacing animation on burger nav
       &-button:hover &-icon::before {
-
           top: -1rem;
       }
       &-button:hover &-icon::after {
           top: 1rem;
-          
       }
 
 
@@ -290,13 +273,35 @@
   -o-transition: all 1s ease;
   transition: all 1s ease;
 
+    @include respond(big-desktop){
+        height: 8vh;
+    }
   &-logo {
 
       height: 6vh;
       transition: all 1s ease;
 
-  }
+      @include respond(big-desktop){
+        height: 8vh;
+    }
 
+  }
+  &-item {
+      padding: 15px 0;
+
+      @include respond(big-desktop){
+        padding: 10px 0;
+
+    }
+    @include respond( tab-land){
+        padding: 5px 0;
+
+    }
+     
+  }
+  &-btn {
+    margin-top: 1.8vh !important;
+  }
 }
 
 .ion-icon-nav {
@@ -307,4 +312,37 @@
         transform: scale(1.4);
         color: $primary-yellow;
     }
+}
+
+
+.dropdown {
+
+    position: relative;
+    display: inline-block;
+    
+    &__btn {}
+
+    &__content { 
+
+        display: none;
+        width: 200%;
+        margin-top: 3.4vh;
+        margin-left: -50%;
+        position: absolute;
+        background-color: #f1f1f1;
+        border: 1px solid $primary-blue;
+        z-index: 1;
+
+        & div {
+            color: $primary-blue;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+    }
+
+    &:hover &__content {
+        display: block;
+    } 
+
 }

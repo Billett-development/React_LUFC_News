@@ -11,6 +11,10 @@
     color: $color-white;
     width: 20vw;
 
+    @include respond(phone){
+        width: 40vw;
+    }
+
     &:hover {
 
         letter-spacing: 1px;

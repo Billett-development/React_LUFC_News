@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import AboutTimeline from "../../Common/Components/AboutTimeline";
 
 
-import { Segment } from "semantic-ui-react";
-
 export default function AboutPage() {
 
     const [data, setData] = useState([]);
@@ -26,8 +24,8 @@ export default function AboutPage() {
 
     
     return(
-        <Segment>
+      <React.Fragment>
         <AboutTimeline aboutInfo={aboutData.acf}/>
-        </Segment>
+      </React.Fragment>
     )
 }

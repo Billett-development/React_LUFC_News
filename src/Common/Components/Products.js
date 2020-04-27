@@ -15,14 +15,13 @@ export default class Products extends React.Component {
     render(){
 
         let productsData = this.props.Products;
-        console.log(productsData)
 
         if (productsData !== undefined) {
             const productItem = productsData.products.map(
               (product) => (
                 <div className={`${DEFAULT_CLASSNAME}__items`}>
                     <a href={product.product_link}>
-                        <img src={product.product_image.url} alt="add alt here"/>
+                        <img src={product.product_image.url} alt={product.product_image.alt}/>
                         <span className="title">{product.product_title}</span>
                         <div className="purchasing">
                             <p>£{product.product_price}</p>
@@ -72,7 +71,7 @@ export default class Products extends React.Component {
         <div className="container">
         
             <div className={`${DEFAULT_CLASSNAME}__heading`}>
-                <h3 className="section-headings">Best selling products</h3>
+                <h1 className="section-headings">Best selling products</h1>
             </div>
             <Slider {...settings} className={DEFAULT_CLASSNAME}>
                 {productItem}

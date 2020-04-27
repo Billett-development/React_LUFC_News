@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Recaptcha from 'react-recaptcha';
+
 
 import HeroVideo from "../../Common/Components/HeroVideo";
 import HeroOverlay from "../../Common/Components/HeroOverlay";
@@ -8,8 +8,6 @@ import About from "../../Common/Components/About";
 import Highlights from "../../Common/Components/Highlights";
 import Products from "../../Common/Components/Products";
 import Partners from "../../Common/Components/Partners";
-
-import { Segment } from "semantic-ui-react";
 
 export default function Home() {
 
@@ -22,11 +20,9 @@ export default function Home() {
   
       function getData() {
   
-        fetch("http://localhost/LUFC_news/wp-json/acf/v3/pages/24?_embed")
+        fetch("http://localhost/LUFC_news/wp-json/acf/v3/pages/24?_embed") 
               .then(response => response.json())
               .then(homeData => setHomeData(homeData));
-
-              
       }
 
       function getWordpressPosts() {
@@ -41,7 +37,7 @@ export default function Home() {
     }, [dataIsLoaded]);
     
     return (
-        <Segment>
+      <React.Fragment>
         <HeroVideo />
         <HeroOverlay />
         <RecentNews RecentNews={data} />
@@ -49,7 +45,7 @@ export default function Home() {
         <Highlights YoutubeVideo={homeData.acf}/>
         <Products Products={homeData.acf}/>
         <Partners Partners={homeData.acf}/>
-        </Segment>
+      </React.Fragment>
     )
 
 

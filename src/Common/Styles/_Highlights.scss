@@ -6,6 +6,12 @@
     align-items: center;
     flex-direction: column;
 
+    &__heading {
+        @include respond(phone) {
+            margin-top: 10vh;
+        }
+    }
+
     &__video {
 
         width: 80%;
@@ -26,7 +32,6 @@
 
         border: .5px solid $primary-blue;
         width: 80%;
-        height: 4vh;
         padding: 3px;
         font-size: 2rem;
 
@@ -35,7 +40,6 @@
         }
         @include respond(tab-land) {
             width: 90%;
-            height: 3vh;
         }
     }
 }

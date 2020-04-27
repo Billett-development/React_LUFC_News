@@ -7,12 +7,13 @@ const DEFAULT_CLASSNAME = "about";
 export default function About(AboutObject) {
 
     const AboutInfoResult = AboutObject.AboutInfo;
+
     return(
         <div className="section-about">
             <div className="container">
                 <div className={DEFAULT_CLASSNAME}>
                         <div className={`${DEFAULT_CLASSNAME}__info`}>
-                            <h3>{AboutInfoResult !== undefined ? AboutInfoResult.about_title : ""}</h3>
+                            <h1 className="section-headings">{AboutInfoResult !== undefined ? AboutInfoResult.about_title : ""}</h1>
                             <p>{AboutInfoResult !== undefined ? AboutInfoResult.about_description : ""}</p>
                             
                         </div>
@@ -20,15 +21,15 @@ export default function About(AboutObject) {
                             <div className="composition">
 
                                 <img 
-                                    alt="lufc about 1"
+                                    alt={AboutInfoResult !== undefined ? AboutInfoResult.about_image_back.alt: ""}
                                     className="composition__photo composition__photo--p1"
                                     src={AboutInfoResult !== undefined ? AboutInfoResult.about_image_back.url: ""} />
                                 <img 
-                                    alt="lufc about 2"
+                                    alt={AboutInfoResult !== undefined ? AboutInfoResult.about_image_middle.alt: ""}
                                     className="composition__photo composition__photo--p2"
                                     src={AboutInfoResult !== undefined ? AboutInfoResult.about_image_middle.url: ""} />
                                 <img 
-                                    alt="lufc about 3"
+                                    alt={AboutInfoResult !== undefined ? AboutInfoResult.about_image_front.alt: ""}
                                     className="composition__photo composition__photo--p3"
                                     src={AboutInfoResult !== undefined ? AboutInfoResult.about_image_front.url: ""} />
                             </div>

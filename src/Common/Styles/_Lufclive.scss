@@ -2,13 +2,13 @@
 
 .live {
 
-    padding-top: 10rem;
-
+    padding-top: 15rem;
 
     &__score {
 
         margin: 0 auto;
-        width: 70%;
+        width: 90%;
+        font-weight: 500;
         background-color: $color-white;
 
 
@@ -22,24 +22,47 @@
 
             &-teams{
                 display: flex;
-                justify-content: space-around;
-                font-size: 3rem;
+                justify-content: space-between;
+                font-size: 2.5rem;
 
                 &--leeds {
+                    width: 20%;
 
+                    @include respond(phone){
+                        width: 40%;
+                        font-size: 80%;
+                }
+                    
                     img {
                         display: flex;
                         margin: 0 auto;
                         width: 50px;
                     }
+
+                    div {
+                        text-align: center;
+                    }
                 }
 
                 &--opposition {
+                    width: 20%;
 
+                    @include respond(phone){
+                            width: 40%;
+                            font-size: 80%;
+                    }
                     img {
                         display: flex;
                         margin: 0 auto;
                         width: 50px;
+                    }
+
+                    div {
+                        text-align: center;
+
+                        @include respond(phone){
+                            
+                        }
                     }
 
                 }
@@ -53,6 +76,11 @@
                
             }
 
+            &-info {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
     }
 
 
@@ -63,13 +91,14 @@
         width: 80%;
         display: flex;
         justify-content: space-between;
+        font-size: 2rem;
 
 
         &-leeds {
             display: flex;
             flex-direction: column;
             padding: 1rem;
-            font-size: 1.5rem;
+            
 
             & * {
                 
@@ -88,9 +117,8 @@
         &-static {
             display: flex;
             flex-direction: column;
-            padding: 1rem;
-            font-size: 1.5rem;
-
+            padding: 0;
+            
 
             & * {
                 margin: 1rem 0;
@@ -111,7 +139,6 @@
             display: flex;
             flex-direction: column;
             padding: 1rem;
-            font-size: 1.5rem;
 
             & * {
                 margin: 1rem;
@@ -126,7 +153,9 @@
         }
 
     }
+}
 
-
-
+.football-logo {
+    font-size: 220%;
+    margin-left: -7px;
 }

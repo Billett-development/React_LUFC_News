@@ -60,8 +60,8 @@ export default function Contact(data) {
                         <div className={`${DEFAULT_CLASSNAME}__details-post`}>
                             <IoIosPin className="ion-icon" />
                             <h5>Post</h5>
-                            <p>{ContactInfo !== undefined ? ContactInfo.post_address : ""}</p> <br />
-                            <p>{ContactInfo !== undefined ? ContactInfo.post_address_2 : ""}</p>
+                            <p>{ContactInfo !== undefined ? ContactInfo.post_address : ""}<br />
+                            {ContactInfo !== undefined ? ContactInfo.post_address_2 : ""}</p>
                             
                         </div>
                         <div className={`${DEFAULT_CLASSNAME}__details-email`}>
@@ -118,7 +118,7 @@ export default function Contact(data) {
     
                         <div class="contact__submit">
                             <div class="contact__submit-btn">
-                                <button onClick={this.handleSubscribe} disabled={serverState.submitting} class="btn-blue">Submit</button>
+                                <button disabled={serverState.submitting} class="btn-blue">Submit</button>
                             </div>
                                     {serverState.status && (
                                         <p className={!serverState.status.ok ? "errorMsg" : ""}>

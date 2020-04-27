@@ -9,6 +9,10 @@
         margin-top: 0;
      }
 
+     @include respond(big-desktop){
+        margin-top: 12vh;
+     }
+
     &::after {
         content: '';
         position: absolute;
@@ -127,6 +131,10 @@
             align-items: center;
             background-color: $primary-blue;
             height: 7vh;
+
+            @include respond(big-desktop){
+               height: 10vh;
+            }
             border-top-left-radius: 1rem;
             border-top-right-radius: 1rem;
             border-bottom: $border-1px;

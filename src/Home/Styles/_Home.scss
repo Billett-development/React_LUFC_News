@@ -21,6 +21,10 @@
 
     margin-top: $section-margin;
     margin-bottom: $section-margin;
+
+    @include respond(phone) {
+        margin-top: 22vh;
+    }
 }
 .section-products {
 

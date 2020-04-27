@@ -3,9 +3,6 @@ import React, { useState, useEffect } from "react";
 
 import Contact from "../../Common/Components/Contact";
 
-
-import { Segment } from "semantic-ui-react";
-
 export default function ContactPage() {
 
     const [homeData, setHomeData] = useState([]);
@@ -25,8 +22,8 @@ export default function ContactPage() {
     }, [dataIsLoaded]);
 
     return(
-        <Segment>
+        <React.Fragment>
             <Contact contactInfo={homeData.acf} />
-        </Segment>
+        </React.Fragment>
     );
 }

@@ -1,0 +1,78 @@
+@import './main';
+
+.teamsheet {
+
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &__title {
+        margin-top: 10vh;
+        font-size: 3rem;
+        padding: 1rem;
+        font-weight: 600;
+        background-color: $primary-blue;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    &__title:first-child {margin-top: 0;}
+
+    &__item {
+
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        width: 19%;
+        flex-basis: 19%;
+        margin-left: .5%;
+        margin-right: .5%;
+
+        &-image {
+            width: 100%;
+            height: auto;
+        }
+
+        &-info {
+            display: flex;
+            justify-content: center;
+            background-color: $primary-blue;
+            text-transform: uppercase;
+            color: white;
+            padding: 1rem 0;
+            width: 100%;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 1rem 0;
+
+            & div {
+                padding-right: 5px;
+            }
+        }
+    }
+
+    &__item
+
+    &__goalkeeper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__defender {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__midfielder {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__attacker {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10vh;
+    }
+}

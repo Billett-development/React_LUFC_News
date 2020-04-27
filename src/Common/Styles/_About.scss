@@ -4,9 +4,11 @@
 
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10rem;
 
     @include respond(phone) {
         flex-direction: column;
+        margin-bottom: 5rem;
     }
 
 
@@ -86,13 +88,11 @@
         
         @include respond(phone) {
             padding: 2rem;
-            margin-top: 2rem;
-            
+            margin-top: 10rem;
          }
     }
 
             @include respond(tab-land) {
-
                 height: 40vh;
             }
 

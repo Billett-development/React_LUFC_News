@@ -12,6 +12,10 @@
     width: 80%;
     margin-top: 20vh;
 
+    @include respond(phone){
+        margin-top: 5vh;
+    }
+
     &__details {
 
         display: flex;
@@ -19,9 +23,13 @@
         position: relative;
         text-align: center;
 
+        @include respond(phone){
+            flex-direction: column;
+        }
+
         & * h5 { font-size: 2.5rem;}
 
-        & * p {font-size: 1.5rem;}
+        & * p {font-size: 1.5rem; margin-bottom: 1.5rem;}
     }
 
     &__heading {
@@ -64,6 +72,7 @@
             
             &-input {
                 width: 100%;
+                height: 4vh;
                 border: $form-border;
                 @include formFocus;
                 padding: 5px;
@@ -81,7 +90,7 @@
         &-input {
 
             &-email {
-
+                height: 4vh;
                 width: 100%;
                 border: $form-border;
                 @include formFocus;
@@ -101,6 +110,7 @@
         &-input {
 
             &-subject {
+                height: 4vh;
                 width: 100%;
                 border: $form-border;
                 @include formFocus;
@@ -131,6 +141,10 @@
     &__submit {
         display: flex;
         justify-content: flex-end;
+
+
+
+        
     }
 
     &__map {

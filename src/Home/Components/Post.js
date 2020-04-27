@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import SinglePost from "../../Common/Components/SinglePost";
 
-
-import { Segment } from "semantic-ui-react";
-
 export default function Post() {
 
     const [aboutData, setaboutData] = useState([]);
@@ -23,8 +20,8 @@ export default function Post() {
     }, [dataIsLoaded]);
     
     return(
-        <Segment>
+      <React.Fragment>
             <SinglePost posts={aboutData} />
-        </Segment>
+      </React.Fragment>
     )
 }

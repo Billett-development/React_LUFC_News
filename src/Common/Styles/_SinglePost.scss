@@ -25,6 +25,11 @@
         padding: 2rem;
         font-weight: 400;
 
+        @include respond(phone){
+            font-size: 140%;
+            padding: 0;
+        }
+
         img {
             width: auto;
             max-width: 100%;
@@ -106,8 +111,7 @@
         }
 
         &-left {
-
-            width: 30vw;
+            width: 25vw;
             display: flex;
             align-items: center;
             background-color: $primary-blue;
@@ -116,6 +120,15 @@
             color: white;
             transition: .4s all;
             justify-content: space-around;
+
+            @include respond(big-desktop){
+                width: 15vw;
+            }
+
+            @include respond(phone){
+                width: 30vw;
+                font-size: 70%;
+            }
 
             &:hover {
                 background-color: #f2f2f2;
@@ -128,15 +141,23 @@
 
         &-right {
 
-            width: 30vw;
+            width: 25vw;
             display: flex;
-
             background-color: $primary-blue;
             border: 1px solid $primary-blue;
             padding: 8px;
             color: white;
             transition: .4s all;
             justify-content: space-around;
+
+            @include respond(big-desktop){
+                width: 15vw;
+            }
+
+            @include respond(phone){
+                width: 30vw;
+                font-size: 70%;
+            }
 
             &:hover {
                 background-color: #f2f2f2;

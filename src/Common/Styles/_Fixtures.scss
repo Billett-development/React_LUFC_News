@@ -1,13 +1,28 @@
+@import './main';
+
 .fixture {
 
-    width: 70%;
-    margin: 0 auto;
+    width: 80%;
+    margin-left: 10%;
     background-color: #fff;
     border-bottom: 1px solid rgba(180, 179, 179, 0.7);
     margin-bottom: 3vh;
 
     display: flex;
     justify-content: space-between;
+
+    &__title {
+        margin-top: 10vh;
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        padding: 1rem;
+        font-weight: 600;
+        background-color: $primary-blue;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    &__title:first-child {margin-top: 0;}
     
 
     &__teams {
@@ -27,8 +42,8 @@
             padding: 1rem;
             
                 img {
-                    width: 30px;
-                    margin-right: 2.5rem;
+                    width: 75px;
+                    margin-right: 2rem;
                 }
 
                 div {
@@ -42,12 +57,11 @@
 
             display: flex;
             justify-content: space-between;
-
             padding: 1rem;
 
                 img {
-                    width: 30px;
-                    margin-right: 2.5rem;
+                    width: 75px;
+                    margin-right: 2rem;
                 }
 
                 div {

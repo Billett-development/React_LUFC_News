@@ -15,7 +15,11 @@
 
     &__item {
        
-        width: 25%;
+        width: 20%;
+
+        @include respond(phone) {
+            width: 22.5%;
+         }
 
             img {
                 background-size: contain;
